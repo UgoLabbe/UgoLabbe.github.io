@@ -85,40 +85,55 @@
                         {
                             label: 'Taux entreprises (effectif min)',
                             data: filteredData.map(d => d["Taux entreprises (effectif min)"]),
-                            backgroundColor: '#8884d8'
+                            backgroundColor: '#8884d8',
+                            stack: 'a',
+                            barThickness: 20
                         },
                         {
                             label: 'Réduction max. entreprises',
                             data: filteredData.map(d => d["Réduction max. entreprises"]),
-                            backgroundColor: '#9c95e0'
+                            backgroundColor: '#9c95e0',
+                            stack: 'a',
+                            barThickness: 20
                         },
                         {
                             label: 'Réduction min. entreprises',
                             data: filteredData.map(d => d["Réduction min. entreprises"]),
-                            backgroundColor: '#b0a7f5'
+                            backgroundColor: '#b0a7f5',
+                            stack: 'a',
+                            barThickness: 20
                         },
                         {
                             label: 'Taux particuliers (effectif min)',
                             data: filteredData.map(d => d["Taux particuliers (effectif min)"]),
-                            backgroundColor: '#82ca9d'
+                            backgroundColor: '#82ca9d',
+                            stack: 'b',
+                            barThickness: 20
                         },
                         {
                             label: 'Réduction max. particuliers',
                             data: filteredData.map(d => d["Réduction max. particuliers"]),
-                            backgroundColor: '#95dca8'
+                            backgroundColor: '#95dca8',
+                            stack: 'b',
+                            barThickness: 20
                         },
                         {
                             label: 'Réduction min. particuliers',
                             data: filteredData.map(d => d["Réduction min. particuliers"]),
-                            backgroundColor: '#a8eeb6'
-                        },
+                            backgroundColor: '#a8eeb6',
+                            stack: 'b',
+                            barThickness: 20
+                        }
                     ]
                 },
                 options: {
                     responsive: true,
                     scales: {
                         x: {
-                            stacked: true
+                            stacked: true,
+                            grid: {
+                                display: false
+                            }
                         },
                         y: {
                             stacked: true
