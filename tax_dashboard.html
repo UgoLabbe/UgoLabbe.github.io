@@ -57,13 +57,14 @@
     </div>
     <script>
         const taxData = [
-            { country: 'France', corporateTax: 25.8, corporateEffectiveTax: 25.9, corporateTaxRevenue: 2.53, incomeTaxRevenue: 9.5 },
-            { country: 'Germany', corporateTax: 29.8, corporateEffectiveTax: 26.6, corporateTaxRevenue: 2.7, incomeTaxRevenue: 10.5 },
-            { country: 'United Kingdom', corporateTax: 25, corporateEffectiveTax: 22, corporateTaxRevenue: 3.1, incomeTaxRevenue: 9.8 },
-            { country: 'Italy', corporateTax: 27.8, corporateEffectiveTax: 21.3, corporateTaxRevenue: 3.0, incomeTaxRevenue: 11.2 },
-            { country: 'Spain', corporateTax: 25, corporateEffectiveTax: 23.3, corporateTaxRevenue: 2.7, incomeTaxRevenue: 8.8 },
-            { country: 'Netherlands', corporateTax: 24.9, corporateEffectiveTax: 23.2, corporateTaxRevenue: 3.9, incomeTaxRevenue: 8.6 },
-            { country: 'Sweden', corporateTax: 20.6, corporateEffectiveTax: 19.7, corporateTaxRevenue: 3.01, incomeTaxRevenue: 12.3 },
+            { country: 'France', corporateTax: 25, corporateEffectiveTax: 21, corporateTaxRevenue: 3.3, incomeTaxRevenue: 9.2 },
+            { country: 'Germany', corporateTax: 15.825, corporateEffectiveTax: 13.5, corporateTaxRevenue: 2.7, incomeTaxRevenue: 8.4 },
+            { country: 'United Kingdom', corporateTax: 25, corporateEffectiveTax: 22, corporateTaxRevenue: 3.5, incomeTaxRevenue: 10.1 },
+            { country: 'Italy', corporateTax: 24, corporateEffectiveTax: 20, corporateTaxRevenue: 3.0, incomeTaxRevenue: 8.9 },
+            { country: 'Spain', corporateTax: 25, corporateEffectiveTax: 22, corporateTaxRevenue: 2.8, incomeTaxRevenue: 9.5 },
+            { country: 'Netherlands', corporateTax: 25.8, corporateEffectiveTax: 23, corporateTaxRevenue: 4.1, incomeTaxRevenue: 10.3 },
+            { country: 'Sweden', corporateTax: 20.6, corporateEffectiveTax: 18, corporateTaxRevenue: 3.2, incomeTaxRevenue: 12.0 },
+            { country: 'United States', corporateTax: 21, corporateEffectiveTax: 18, corporateTaxRevenue: 1.6, incomeTaxRevenue: 8.5 },
         ];
 
         let selectedCountries = ['France', 'United States'];
@@ -113,7 +114,9 @@
                             data: filteredData.map(d => d["Corporate Tax Rate"]),
                             backgroundColor: '#8884d8',
                             stack: 'a',
-                            barThickness: 20,
+                            barThickness: 15,
+                            barPercentage: 0.5,
+                            categoryPercentage: 0.8,
                             yAxisID: 'left-y-axis'
                         },
                         {
@@ -121,7 +124,9 @@
                             data: filteredData.map(d => d["Effective Corporate Tax Rate"]),
                             backgroundColor: '#9c95e0',
                             stack: 'a',
-                            barThickness: 20,
+                            barThickness: 15,
+                            barPercentage: 0.5,
+                            categoryPercentage: 0.8,
                             yAxisID: 'left-y-axis'
                         },
                         {
@@ -129,7 +134,9 @@
                             data: filteredData.map(d => d["Corporate Tax Revenue (% of GDP)"]),
                             backgroundColor: '#b0a7f5',
                             stack: 'b',
-                            barThickness: 20,
+                            barThickness: 15,
+                            barPercentage: 0.5,
+                            categoryPercentage: 0.8,
                             yAxisID: 'right-y-axis'
                         },
                         {
@@ -137,7 +144,9 @@
                             data: filteredData.map(d => d["Income Tax Revenue (% of GDP)"]),
                             backgroundColor: '#82ca9d',
                             stack: 'b',
-                            barThickness: 20,
+                            barThickness: 15,
+                            barPercentage: 0.5,
+                            categoryPercentage: 0.8,
                             yAxisID: 'right-y-axis'
                         }
                     ]
