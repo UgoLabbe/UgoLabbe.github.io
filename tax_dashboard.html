@@ -20,34 +20,53 @@
             width: 100% !important;
             height: 100% !important;
         }
+        .data-sources {
+            margin-top: 20px;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .data-sources a {
+            color: #0d6efd;
+            text-decoration: none;
+        }
+        .data-sources a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
     <div class="container p-4">
-        <h1 class="text-2xl font-bold mb-4">Comparaison des taux d'imposition et réductions (2023/2024)</h1>
+        <h1 class="text-2xl font-bold mb-4">Tax Rates and Revenue Comparison (2023/2024)</h1>
         <div id="buttonContainer" class="mb-4 flex flex-wrap gap-2"></div>
         <div class="chart-container">
             <canvas id="barChart"></canvas>
         </div>
         <div class="mt-4 text-sm text-gray-600">
-            <p>Note: Chaque barre représente le taux d'imposition total. La partie inférieure (couleur plus foncée) montre le taux effectif minimum après réductions maximales.</p>
-            <p>La partie supérieure de chaque barre est divisée en deux sections : la réduction minimale (couleur la plus claire) et la réduction supplémentaire potentielle (couleur intermédiaire).</p>
-            <p>Les réductions potentielles incluent les crédits d'impôt, les allègements de charges, etc. Les taux effectifs peuvent varier selon les situations individuelles.</p>
+            <p>Note: Each bar represents different tax metrics. The bars show effective tax rates and tax revenue as a percentage of GDP.</p>
+            <p>The chart includes corporate and individual tax rates and their impact on GDP through tax revenue.</p>
+        </div>
+        <div class="data-sources">
+            <h5>Data Sources:</h5>
+            <ul>
+                <li><a href="https://www.touteleurope.eu/economie-et-social/carte-impot-sur-les-societes-dans-les-etats-membres-de-l-union-europeenne/" target="_blank">Corporate Tax Rates in EU Member States</a></li>
+                <li><a href="https://www.touteleurope.eu/economie-et-social/carte-que-represente-l-impot-sur-le-revenu-dans-les-etats-membres-de-l-union-europeenne/" target="_blank">Income Tax Rates in EU Member States</a></li>
+            </ul>
         </div>
     </div>
     <script>
         const taxData = [
-            { country: 'France', corporateTax: 25, corporateReductionMin: 3, corporateReductionMax: 8, individualTax: 45, individualReductionMin: 5, individualReductionMax: 15 },
-            { country: 'Allemagne', corporateTax: 15.825, corporateReductionMin: 1, corporateReductionMax: 5, individualTax: 45, individualReductionMin: 4, individualReductionMax: 12 },
-            { country: 'Royaume-Uni', corporateTax: 25, corporateReductionMin: 2, corporateReductionMax: 7, individualTax: 45, individualReductionMin: 3, individualReductionMax: 10 },
-            { country: 'Italie', corporateTax: 24, corporateReductionMin: 2, corporateReductionMax: 6, individualTax: 43, individualReductionMin: 3, individualReductionMax: 9 },
-            { country: 'Espagne', corporateTax: 25, corporateReductionMin: 2, corporateReductionMax: 7, individualTax: 45, individualReductionMin: 4, individualReductionMax: 11 },
-            { country: 'Pays-Bas', corporateTax: 25.8, corporateReductionMin: 3, corporateReductionMax: 8, individualTax: 49.5, individualReductionMin: 5, individualReductionMax: 14 },
-            { country: 'Suède', corporateTax: 20.6, corporateReductionMin: 1, corporateReductionMax: 4, individualTax: 52, individualReductionMin: 3, individualReductionMax: 8 },
-            { country: 'États-Unis', corporateTax: 21, corporateReductionMin: 4, corporateReductionMax: 12, individualTax: 37, individualReductionMin: 6, individualReductionMax: 18 },
+            { country: 'France', corporateTax: 25.8, corporateEffectiveTax: 25.9, corporateTaxRevenue: 2.53, incomeTaxRevenue: 9.5 },
+            { country: 'Germany', corporateTax: 29.8, corporateEffectiveTax: 26.6, corporateTaxRevenue: 2.7, incomeTaxRevenue: 10.5 },
+            { country: 'United Kingdom', corporateTax: 25, corporateEffectiveTax: 22, corporateTaxRevenue: 3.1, incomeTaxRevenue: 9.8 },
+            { country: 'Italy', corporateTax: 27.8, corporateEffectiveTax: 21.3, corporateTaxRevenue: 3.0, incomeTaxRevenue: 11.2 },
+            { country: 'Spain', corporateTax: 25, corporateEffectiveTax: 23.3, corporateTaxRevenue: 2.7, incomeTaxRevenue: 8.8 },
+            { country: 'Netherlands', corporateTax: 24.9, corporateEffectiveTax: 23.2, corporateTaxRevenue: 3.9, incomeTaxRevenue: 8.6 },
+            { country: 'Sweden', corporateTax: 20.6, corporateEffectiveTax: 19.7, corporateTaxRevenue: 3.01, incomeTaxRevenue: 12.3 },
         ];
 
-        let selectedCountries = ['France', 'États-Unis'];
+        let selectedCountries = ['France', 'United States'];
 
         function toggleCountry(country) {
             if (selectedCountries.includes(country)) {
@@ -76,14 +95,10 @@
                 .filter(item => selectedCountries.includes(item.country))
                 .map(item => ({
                     country: item.country,
-                    "Taux entreprises (effectif min)": item.corporateTax - item.corporateReductionMax,
-                    "Réduction max. entreprises": item.corporateReductionMax - item.corporateReductionMin,
-                    "Réduction min. entreprises": item.corporateReductionMin,
-                    "Taux particuliers (effectif min)": item.individualTax - item.individualReductionMax,
-                    "Réduction max. particuliers": item.individualReductionMax - item.individualReductionMin,
-                    "Réduction min. particuliers": item.individualReductionMin,
-                    corporateTax: item.corporateTax,
-                    individualTax: item.individualTax,
+                    "Corporate Tax Rate": item.corporateTax,
+                    "Effective Corporate Tax Rate": item.corporateEffectiveTax,
+                    "Corporate Tax Revenue (% of GDP)": item.corporateTaxRevenue,
+                    "Income Tax Revenue (% of GDP)": item.incomeTaxRevenue,
                 }));
 
             const ctx = document.getElementById('barChart').getContext('2d');
@@ -94,46 +109,36 @@
                     labels: filteredData.map(d => d.country),
                     datasets: [
                         {
-                            label: 'Taux entreprises (effectif min)',
-                            data: filteredData.map(d => d["Taux entreprises (effectif min)"]),
+                            label: 'Corporate Tax Rate',
+                            data: filteredData.map(d => d["Corporate Tax Rate"]),
                             backgroundColor: '#8884d8',
                             stack: 'a',
-                            barThickness: 20
+                            barThickness: 20,
+                            yAxisID: 'left-y-axis'
                         },
                         {
-                            label: 'Réduction max. entreprises',
-                            data: filteredData.map(d => d["Réduction max. entreprises"]),
+                            label: 'Effective Corporate Tax Rate',
+                            data: filteredData.map(d => d["Effective Corporate Tax Rate"]),
                             backgroundColor: '#9c95e0',
                             stack: 'a',
-                            barThickness: 20
+                            barThickness: 20,
+                            yAxisID: 'left-y-axis'
                         },
                         {
-                            label: 'Réduction min. entreprises',
-                            data: filteredData.map(d => d["Réduction min. entreprises"]),
+                            label: 'Corporate Tax Revenue (% of GDP)',
+                            data: filteredData.map(d => d["Corporate Tax Revenue (% of GDP)"]),
                             backgroundColor: '#b0a7f5',
-                            stack: 'a',
-                            barThickness: 20
+                            stack: 'b',
+                            barThickness: 20,
+                            yAxisID: 'right-y-axis'
                         },
                         {
-                            label: 'Taux particuliers (effectif min)',
-                            data: filteredData.map(d => d["Taux particuliers (effectif min)"]),
+                            label: 'Income Tax Revenue (% of GDP)',
+                            data: filteredData.map(d => d["Income Tax Revenue (% of GDP)"]),
                             backgroundColor: '#82ca9d',
                             stack: 'b',
-                            barThickness: 20
-                        },
-                        {
-                            label: 'Réduction max. particuliers',
-                            data: filteredData.map(d => d["Réduction max. particuliers"]),
-                            backgroundColor: '#95dca8',
-                            stack: 'b',
-                            barThickness: 20
-                        },
-                        {
-                            label: 'Réduction min. particuliers',
-                            data: filteredData.map(d => d["Réduction min. particuliers"]),
-                            backgroundColor: '#a8eeb6',
-                            stack: 'b',
-                            barThickness: 20
+                            barThickness: 20,
+                            yAxisID: 'right-y-axis'
                         }
                     ]
                 },
@@ -147,8 +152,25 @@
                                 display: false
                             }
                         },
-                        y: {
-                            stacked: true
+                        'left-y-axis': {
+                            stacked: true,
+                            beginAtZero: true,
+                            position: 'left',
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            }
+                        },
+                        'right-y-axis': {
+                            stacked: true,
+                            beginAtZero: true,
+                            position: 'right',
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            }
                         }
                     },
                     plugins: {
@@ -156,19 +178,12 @@
                             callbacks: {
                                 label: function(context) {
                                     const data = filteredData[context.dataIndex];
-                                    if (context.dataset.label === 'Taux entreprises (effectif min)') {
+                                    if (context.dataset.label === 'Corporate Tax Rate') {
                                         return [
-                                            `Taux d'imposition des entreprises (brut): ${data.corporateTax}%`,
-                                            `Réduction minimale: ${data["Réduction min. entreprises"]}%`,
-                                            `Réduction maximale: ${data["Réduction min. entreprises"] + data["Réduction max. entreprises"]}%`,
-                                            `Taux effectif potentiel: ${data["Taux entreprises (effectif min)"].toFixed(1)}% - ${(data.corporateTax - data["Réduction min. entreprises"]).toFixed(1)}%`
-                                        ];
-                                    } else if (context.dataset.label === 'Taux particuliers (effectif min)') {
-                                        return [
-                                            `Taux d'imposition max. des particuliers (brut): ${data.individualTax}%`,
-                                            `Réduction minimale: ${data["Réduction min. particuliers"]}%`,
-                                            `Réduction maximale: ${data["Réduction min. particuliers"] + data["Réduction max. particuliers"]}%`,
-                                            `Taux effectif potentiel: ${data["Taux particuliers (effectif min)"].toFixed(1)}% - ${(data.individualTax - data["Réduction min. particuliers"]).toFixed(1)}%`
+                                            `Gross Corporate Tax Rate: ${data["Corporate Tax Rate"]}%`,
+                                            `Effective Corporate Tax Rate: ${data["Effective Corporate Tax Rate"]}%`,
+                                            `Corporate Tax Revenue: ${data["Corporate Tax Revenue (% of GDP)"]}%`,
+                                            `Income Tax Revenue: ${data["Income Tax Revenue (% of GDP)"]}%`
                                         ];
                                     }
                                     return `${context.dataset.label}: ${context.raw}%`;
