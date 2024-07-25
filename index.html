@@ -5,12 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .header-image {
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/2560px-Flag_of_Europe.svg.png');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+        .header-image h1 {
+            font-size: 3rem;
+        }
+        .content {
+            margin-top: -50px;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+    </style>
 </head>
 <body>
-    <div class="container p-4">
-        <h1 class="text-2xl font-bold mb-4">Welcome to my EU observatory</h1>
-        <p>Click the button below to view the tax comparison dashboard:</p>
-        <a href="tax_dashboard.html" class="btn btn-primary">Go to Dashboard</a>
+    <div class="header-image">
+        <h1>Welcome to my EU Observatory</h1>
     </div>
+    <div class="container content p-4 bg-white shadow rounded">
+        <div class="text-center mb-4">
+            <img src="https://example.com/tax-dashboard-thumbnail.jpg" alt="Tax Dashboard" class="img-fluid rounded" style="max-width: 100%; height: auto;">
+        </div>
+        <p class="text-center">Click the button below to view the tax comparison dashboard:</p>
+        <div class="text-center">
+            <a href="tax_dashboard.html" class="btn btn-primary btn-lg">Go to Dashboard</a>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
