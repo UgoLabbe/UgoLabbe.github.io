@@ -114,9 +114,9 @@
                             data: filteredData.map(d => d["Corporate Tax Rate"]),
                             backgroundColor: '#8884d8',
                             stack: 'a',
-                            barThickness: 15,
-                            barPercentage: 0.5,
-                            categoryPercentage: 0.8,
+                            barThickness: 10,
+                            barPercentage: 1.0,
+                            categoryPercentage: 0.4,
                             yAxisID: 'left-y-axis'
                         },
                         {
@@ -124,9 +124,9 @@
                             data: filteredData.map(d => d["Effective Corporate Tax Rate"]),
                             backgroundColor: '#9c95e0',
                             stack: 'a',
-                            barThickness: 15,
-                            barPercentage: 0.5,
-                            categoryPercentage: 0.8,
+                            barThickness: 10,
+                            barPercentage: 1.0,
+                            categoryPercentage: 0.4,
                             yAxisID: 'left-y-axis'
                         },
                         {
@@ -134,9 +134,9 @@
                             data: filteredData.map(d => d["Corporate Tax Revenue (% of GDP)"]),
                             backgroundColor: '#b0a7f5',
                             stack: 'b',
-                            barThickness: 15,
-                            barPercentage: 0.5,
-                            categoryPercentage: 0.8,
+                            barThickness: 10,
+                            barPercentage: 1.0,
+                            categoryPercentage: 0.4,
                             yAxisID: 'right-y-axis'
                         },
                         {
@@ -144,9 +144,9 @@
                             data: filteredData.map(d => d["Income Tax Revenue (% of GDP)"]),
                             backgroundColor: '#82ca9d',
                             stack: 'b',
-                            barThickness: 15,
-                            barPercentage: 0.5,
-                            categoryPercentage: 0.8,
+                            barThickness: 10,
+                            barPercentage: 1.0,
+                            categoryPercentage: 0.4,
                             yAxisID: 'right-y-axis'
                         }
                     ]
@@ -159,9 +159,6 @@
                             stacked: true,
                             grid: {
                                 display: false
-                            },
-                            ticks: {
-                                autoSkip: false
                             }
                         },
                         'left-y-axis': {
