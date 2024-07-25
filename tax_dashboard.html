@@ -57,14 +57,14 @@
     </div>
     <script>
         const taxData = [
-            { country: 'France', corporateTax: 25, corporateEffectiveTax: 21, corporateTaxRevenue: 3.3, incomeTaxRevenue: 9.2 },
-            { country: 'Germany', corporateTax: 15.825, corporateEffectiveTax: 13.5, corporateTaxRevenue: 2.7, incomeTaxRevenue: 8.4 },
-            { country: 'United Kingdom', corporateTax: 25, corporateEffectiveTax: 22, corporateTaxRevenue: 3.5, incomeTaxRevenue: 10.1 },
-            { country: 'Italy', corporateTax: 24, corporateEffectiveTax: 20, corporateTaxRevenue: 3.0, incomeTaxRevenue: 8.9 },
-            { country: 'Spain', corporateTax: 25, corporateEffectiveTax: 22, corporateTaxRevenue: 2.8, incomeTaxRevenue: 9.5 },
-            { country: 'Netherlands', corporateTax: 25.8, corporateEffectiveTax: 23, corporateTaxRevenue: 4.1, incomeTaxRevenue: 10.3 },
-            { country: 'Sweden', corporateTax: 20.6, corporateEffectiveTax: 18, corporateTaxRevenue: 3.2, incomeTaxRevenue: 12.0 },
-            { country: 'United States', corporateTax: 21, corporateEffectiveTax: 18, corporateTaxRevenue: 1.6, incomeTaxRevenue: 8.5 },
+            { country: 'France', corporateEffectiveTax: 21, corporateTaxRevenue: 3.3, incomeTaxRevenue: 9.2 },
+            { country: 'Germany', corporateEffectiveTax: 13.5, corporateTaxRevenue: 2.7, incomeTaxRevenue: 8.4 },
+            { country: 'United Kingdom', corporateEffectiveTax: 22, corporateTaxRevenue: 3.5, incomeTaxRevenue: 10.1 },
+            { country: 'Italy', corporateEffectiveTax: 20, corporateTaxRevenue: 3.0, incomeTaxRevenue: 8.9 },
+            { country: 'Spain', corporateEffectiveTax: 22, corporateTaxRevenue: 2.8, incomeTaxRevenue: 9.5 },
+            { country: 'Netherlands', corporateEffectiveTax: 23, corporateTaxRevenue: 4.1, incomeTaxRevenue: 10.3 },
+            { country: 'Sweden', corporateEffectiveTax: 18, corporateTaxRevenue: 3.2, incomeTaxRevenue: 12.0 },
+            { country: 'United States', corporateEffectiveTax: 18, corporateTaxRevenue: 1.6, incomeTaxRevenue: 8.5 },
         ];
 
         let selectedCountries = ['France', 'United States'];
@@ -96,7 +96,6 @@
                 .filter(item => selectedCountries.includes(item.country))
                 .map(item => ({
                     country: item.country,
-                    "Corporate Tax Rate": item.corporateTax,
                     "Effective Corporate Tax Rate": item.corporateEffectiveTax,
                     "Corporate Tax Revenue (% of GDP)": item.corporateTaxRevenue,
                     "Income Tax Revenue (% of GDP)": item.incomeTaxRevenue,
@@ -110,23 +109,13 @@
                     labels: filteredData.map(d => d.country),
                     datasets: [
                         {
-                            label: 'Corporate Tax Rate',
-                            data: filteredData.map(d => d["Corporate Tax Rate"]),
-                            backgroundColor: '#8884d8',
-                            stack: 'a',
-                            barThickness: 30, // Increased size of bars
-                            barPercentage: 1.0,
-                            categoryPercentage: 0.5, // Increased spacing
-                            yAxisID: 'left-y-axis'
-                        },
-                        {
                             label: 'Effective Corporate Tax Rate',
                             data: filteredData.map(d => d["Effective Corporate Tax Rate"]),
                             backgroundColor: '#9c95e0',
                             stack: 'a',
                             barThickness: 30, // Increased size of bars
-                            barPercentage: 1.0,
-                            categoryPercentage: 0.5, // Increased spacing
+                            barPercentage: 0.5,
+                            categoryPercentage: 0.5,
                             yAxisID: 'left-y-axis'
                         },
                         {
@@ -135,8 +124,8 @@
                             backgroundColor: '#b0a7f5',
                             stack: 'b',
                             barThickness: 30, // Increased size of bars
-                            barPercentage: 1.0,
-                            categoryPercentage: 0.5, // Increased spacing
+                            barPercentage: 0.5,
+                            categoryPercentage: 1.0, // Increased spacing
                             yAxisID: 'right-y-axis'
                         },
                         {
@@ -145,8 +134,8 @@
                             backgroundColor: '#82ca9d',
                             stack: 'b',
                             barThickness: 30, // Increased size of bars
-                            barPercentage: 1.0,
-                            categoryPercentage: 0.5, // Increased spacing
+                            barPercentage: 0.5,
+                            categoryPercentage: 1.0, // Increased spacing
                             yAxisID: 'right-y-axis'
                         }
                     ]
@@ -156,13 +145,13 @@
                     maintainAspectRatio: false,
                     scales: {
                         x: {
-                            stacked: true,
+                            stacked: false,
                             grid: {
                                 display: false
                             }
                         },
                         'left-y-axis': {
-                            stacked: true,
+                            stacked: false,
                             beginAtZero: true,
                             position: 'left',
                             ticks: {
@@ -172,7 +161,7 @@
                             }
                         },
                         'right-y-axis': {
-                            stacked: true,
+                            stacked: false,
                             beginAtZero: true,
                             position: 'right',
                             ticks: {
@@ -187,9 +176,8 @@
                             callbacks: {
                                 label: function(context) {
                                     const data = filteredData[context.dataIndex];
-                                    if (context.dataset.label === 'Corporate Tax Rate') {
+                                    if (context.dataset.label === 'Effective Corporate Tax Rate') {
                                         return [
-                                            `Gross Corporate Tax Rate: ${data["Corporate Tax Rate"]}%`,
                                             `Effective Corporate Tax Rate: ${data["Effective Corporate Tax Rate"]}%`,
                                             `Corporate Tax Revenue: ${data["Corporate Tax Revenue (% of GDP)"]}%`,
                                             `Income Tax Revenue: ${data["Income Tax Revenue (% of GDP)"]}%`
