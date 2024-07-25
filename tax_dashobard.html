@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Comparison Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .btn-outline-primary.selected {
+            background-color: #0d6efd;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container p-4">
+        <h1 class="text-2xl font-bold mb-4">Comparaison des taux d'imposition et réductions (2023/2024)</h1>
+        <div id="buttonContainer" class="mb-4 flex flex-wrap gap-2"></div>
+        <canvas id="barChart" width="100%" height="500"></canvas>
+        <div class="mt-4 text-sm text-gray-600">
+            <p>Note: Chaque barre représente le taux d'imposition total. La partie inférieure (couleur plus foncée) montre le taux effectif minimum après réductions maximales.</p>
+            <p>La partie supérieure de chaque barre est divisée en deux sections : la réduction minimale (couleur la plus claire) et la réduction supplémentaire potentielle (couleur intermédiaire).</p>
+            <p>Les réductions potentielles incluent les crédits d'impôt, les allègements de charges, etc. Les taux effectifs peuvent varier selon les situations individuelles.</p>
+        </div>
+    </div>
+    <script>
+        const taxData = [
+            { country: 'France', corporateTax: 25, corporateReductionMin: 3, corporateReductionMax: 8, individualTax: 45, individualReductionMin: 5, individualReductionMax: 15 },
+            { country: 'Allemagne', corporateTax: 15.825, corporateReductionMin: 1, corporateReductionMax: 5, individualTax: 45, individualReductionMin: 4, individualReductionMax: 12 },
+            { country: 'Royaume-Uni', corporateTax: 25, corporateReductionMin: 2, corporateReductionMax: 7, individualTax: 45, individualReductionMin: 3, individualReductionMax: 10 },
+            { country: 'Italie', corporateTax: 24, corporateReductionMin: 2, corporateReductionMax: 6, individualTax: 43, individualReductionMin: 3, individualReductionMax: 9 },
+            { country: 'Espagne', corporateTax: 25, corporateReductionMin: 2, corporateReductionMax: 7, individualTax: 45, individualReductionMin: 4, individualReductionMax: 11 },
+            { country: 'Pays-Bas', corporateTax: 25.8, corporateReductionMin: 3, corporateReductionMax: 8, individualTax: 49.5, individualReductionMin: 5, individualReductionMax: 14 },
+            { country: 'Suède', corporateTax: 20.6, corporateReductionMin: 1, corporateReductionMax: 4, individualTax: 52, individualReductionMin: 3, individualReductionMax: 8 },
+            { country: 'États-Unis', corporateTax: 21, corporateReductionMin: 4, corporateReductionMax: 12, individualTax: 37, individualReductionMin: 6, individualReductionMax: 18 },
+        ];
+
+        let selectedCountries = ['France', 'États-Unis'];
+
+        function toggleCountry(country) {
+            if (selectedCountries.includes(country)) {
+                selectedCountries = selectedCountries.filter(c => c !== country);
+            } else {
+                selectedCountries.push(country);
+            }
+            updateChart();
+            updateButtons();
+        }
+
+        function updateButtons() {
+            const buttonContainer = document.getElementById('buttonContainer');
+            buttonContainer.innerHTML = '';
+            taxData.forEach(item => {
+                const button = document.createElement('button');
+                button.className = `btn btn-outline-primary ${selectedCountries.includes(item.country) ? 'selected' : ''}`;
+                button.innerText = item.country;
+                button.onclick = () => toggleCountry(item.country);
+                buttonContainer.appendChild(button);
+            });
+        }
+
+        function updateChart() {
+            const filteredData = taxData
+                .filter(item => selectedCountries.includes(item.country))
+                .map(item => ({
+                    country: item.country,
+                    "Taux entreprises (effectif min)": item.corporateTax - item.corporateReductionMax,
+                    "Réduction max. entreprises": item.corporateReductionMax - item.corporateReductionMin,
+                    "Réduction min. entreprises": item.corporateReductionMin,
+                    "Taux particuliers (effectif min)": item.individualTax - item.individualReductionMax,
+                    "Réduction max. particuliers": item.individualReductionMax - item.individualReductionMin,
+                    "Réduction min. particuliers": item.individualReductionMin,
+                    corporateTax: item.corporateTax,
+                    individualTax: item.individualTax,
+                }));
+
+            const ctx = document.getElementById('barChart').getContext('2d');
+            if (window.myBarChart) window.myBarChart.destroy();
+            window.myBarChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: filteredData.map(d => d.country),
+                    datasets: [
+                        {
+                            label: 'Taux entreprises (effectif min)',
+                            data: filteredData.map(d => d["Taux entreprises (effectif min)"]),
+                            backgroundColor: '#8884d8'
+                        },
+                        {
+                            label: 'Réduction max. entreprises',
+                            data: filteredData.map(d => d["Réduction max. entreprises"]),
+                            backgroundColor: '#9c95e0'
+                        },
+                        {
+                            label: 'Réduction min. entreprises',
+                            data: filteredData.map(d => d["Réduction min. entreprises"]),
+                            backgroundColor: '#b0a7f5'
+                        },
+                        {
+                            label: 'Taux particuliers (effectif min)',
+                            data: filteredData.map(d => d["Taux particuliers (effectif min)"]),
+                            backgroundColor: '#82ca9d'
+                        },
+                        {
+                            label: 'Réduction max. particuliers',
+                            data: filteredData.map(d => d["Réduction max. particuliers"]),
+                            backgroundColor: '#95dca8'
+                        },
+                        {
+                            label: 'Réduction min. particuliers',
+                            data: filteredData.map(d => d["Réduction min. particuliers"]),
+                            backgroundColor: '#a8eeb6'
+                        },
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            stacked: true
+                        },
+                        y: {
+                            stacked: true
+                        }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const data = filteredData[context.dataIndex];
+                                    if (context.dataset.label === 'Taux entreprises (effectif min)') {
+                                        return [
+                                            `Taux d'imposition des entreprises (brut): ${data.corporateTax}%`,
+                                            `Réduction minimale: ${data["Réduction min. entreprises"]}%`,
+                                            `Réduction maximale: ${data["Réduction min. entreprises"] + data["Réduction max. entreprises"]}%`,
+                                            `Taux effectif potentiel: ${data["Taux entreprises (effectif min)"].toFixed(1)}% - ${(data.corporateTax - data["Réduction min. entreprises"]).toFixed(1)}%`
+                                        ];
+                                    } else if (context.dataset.label === 'Taux particuliers (effectif min)') {
+                                        return [
+                                            `Taux d'imposition max. des particuliers (brut): ${data.individualTax}%`,
+                                            `Réduction minimale: ${data["Réduction min. particuliers"]}%`,
+                                            `Réduction maximale: ${data["Réduction min. particuliers"] + data["Réduction max. particuliers"]}%`,
+                                            `Taux effectif potentiel: ${data["Taux particuliers (effectif min)"].toFixed(1)}% - ${(data.individualTax - data["Réduction min. particuliers"]).toFixed(1)}%`
+                                        ];
+                                    }
+                                    return `${context.dataset.label}: ${context.raw}%`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateButtons();
+            updateChart();
+        });
+    </script>
+</body>
+</html>
