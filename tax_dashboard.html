@@ -11,13 +11,24 @@
             background-color: #0d6efd;
             color: white;
         }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            height: 500px; /* Adjust height as needed */
+        }
+        canvas {
+            width: 100% !important;
+            height: 100% !important;
+        }
     </style>
 </head>
 <body>
     <div class="container p-4">
         <h1 class="text-2xl font-bold mb-4">Comparaison des taux d'imposition et réductions (2023/2024)</h1>
         <div id="buttonContainer" class="mb-4 flex flex-wrap gap-2"></div>
-        <canvas id="barChart" width="100%" height="500"></canvas>
+        <div class="chart-container">
+            <canvas id="barChart"></canvas>
+        </div>
         <div class="mt-4 text-sm text-gray-600">
             <p>Note: Chaque barre représente le taux d'imposition total. La partie inférieure (couleur plus foncée) montre le taux effectif minimum après réductions maximales.</p>
             <p>La partie supérieure de chaque barre est divisée en deux sections : la réduction minimale (couleur la plus claire) et la réduction supplémentaire potentielle (couleur intermédiaire).</p>
@@ -128,6 +139,7 @@
                 },
                 options: {
                     responsive: true,
+                    maintainAspectRatio: false,
                     scales: {
                         x: {
                             stacked: true,
