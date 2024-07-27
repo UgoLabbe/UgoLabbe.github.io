@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Machine Learning Demos</title>
+    <title>My Personal Website</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -23,6 +23,21 @@
             margin: 0;
             font-size: 2.5em;
         }
+        nav {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
         section {
             max-width: 800px;
             margin: 20px auto;
@@ -34,29 +49,52 @@
         h2 {
             color: #007BFF;
         }
-        a {
-            text-decoration: none;
-            color: #007BFF;
-            font-size: 1.2em;
-        }
-        a:hover {
-            text-decoration: underline;
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: #007BFF;
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Machine Learning Demos</h1>
+    <h1>My Personal Website</h1>
 </header>
 
+<nav>
+    <a href="#about">About Me</a>
+    <a href="classification.html">Machine Learning Demos</a>
+    <!-- Add more links here as you create new pages -->
+</nav>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p>
+        Hello! My name is Ugo Labbé, and I am a passionate machine learning enthusiast. I have a background in Statistics, Business Intelligence and Data Science. I enjoy working on projects that involve data analysis (mostly knowledge discovery), machine learning, and artificial intelligence. On this website, you will find various demos and projects related to machine learning and data science. Feel free to explore and reach out if you have any questions or collaborations in mind!
+    </p>
+    <h2>Contact</h2>
+    <p>
+        ugolabbe12_at_gmail.com
+    <\p>
+</section>
+
 <section>
-    <h2>Available Demos</h2>
+    <h2>Machine Learning Demos</h2>
+    <p>Check out some of the machine learning demos I've created:</p>
     <ul>
         <li><a href="classification.html">Classification</a></li>
         <!-- Add more links here as you create new pages -->
     </ul>
 </section>
+
+<footer>
+    &copy; 2024 [Your Name]. All rights reserved.
+</footer>
 
 </body>
 </html>
