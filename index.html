@@ -3,15 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ML Classifier Visualization</title>
+    <title>Machine Learning Classification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header, section {
+            padding: 20px;
+            margin: 20px;
+        }
+        header {
+            background-color: #f4f4f4;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        iframe {
+            border: none;
+            width: 100%;
+            height: 500px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Interactive Machine Learning Classifier Visualization</h1>
-    <h2>Decision Tree</h2>
-    <iframe src="Decision_Tree.html" width="100%" height="500"></iframe>
-    <h2>K-Nearest Neighbors</h2>
-    <iframe src="K-Nearest_Neighbors.html" width="100%" height="500"></iframe>
-    <h2>Support Vector Machine</h2>
-    <iframe src="Support_Vector_Machine.html" width="100%" height="500"></iframe>
+
+<header>
+    <h1>Introduction to Machine Learning Classification</h1>
+</header>
+
+<section>
+    <h2>What is Classification?</h2>
+    <p>
+        Classification is a type of supervised learning where the goal is to predict the categorical class labels of new instances, based on past observations. The model learns from a labeled dataset, where each training example is a pair consisting of an input object (usually a vector) and a desired output value (also called the supervisory signal).
+    </p>
+</section>
+
+<section>
+    <h2>Common Classification Algorithms</h2>
+    <p>Here are three common classification algorithms used in machine learning:</p>
+    <h3>1. Decision Tree</h3>
+    <p>
+        A decision tree is a flowchart-like structure in which each internal node represents a test on an attribute, each branch represents the outcome of the test, and each leaf node represents a class label. The paths from the root to the leaf represent classification rules.
+    </p>
+    <iframe src="Decision_Tree.html"></iframe>
+
+    <h3>2. K-Nearest Neighbors (KNN)</h3>
+    <p>
+        KNN is a simple, instance-based learning algorithm. The model assigns the class of a test instance based on the majority class among the k-nearest training instances in the feature space. It is simple but can be computationally intensive.
+    </p>
+    <iframe src="K-Nearest_Neighbors.html"></iframe>
+
+    <h3>3. Support Vector Machine (SVM)</h3>
+    <p>
+        SVM is a powerful classification algorithm that works by finding the hyperplane that best separates the classes in the feature space. It aims to maximize the margin between the different classes.
+    </p>
+    <iframe src="Support_Vector_Machine.html"></iframe>
+</section>
+
 </body>
 </html>
