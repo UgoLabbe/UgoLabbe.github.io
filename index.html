@@ -62,7 +62,7 @@
             text-align: center;
             margin: 20px auto;
         }
-        #translate-btn {
+        .translate-btn {
             background-color: #007BFF;
             color: white;
             border: none;
@@ -71,9 +71,10 @@
             font-size: 1.1em;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            margin: 0 10px;
             transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
-        #translate-btn:hover {
+        .translate-btn:hover {
             background-color: #0056b3;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
@@ -83,13 +84,27 @@
     </style>
     <script type="text/javascript">
         function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'fr'}, 'google_translate_element');
+            new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'fr,en'}, 'google_translate_element');
         }
 
-        function loadGoogleTranslate() {
-            var translateScript = document.createElement('script');
-            translateScript.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-            document.head.appendChild(translateScript);
+        function loadGoogleTranslate(lang) {
+            var googleTranslateFrame = document.querySelector('iframe.goog-te-banner-frame');
+            if (googleTranslateFrame) {
+                var translate = googleTranslateFrame.contentDocument || googleTranslateFrame.contentWindow.document;
+                translate.querySelector('.goog-te-menu-frame').contentWindow.document.querySelector('a[lang="' + lang + '"]').click();
+            } else {
+                var translateScript = document.createElement('script');
+                translateScript.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+                document.head.appendChild(translateScript);
+            }
+        }
+
+        function translateToFrench() {
+            loadGoogleTranslate('fr');
+        }
+
+        function translateToEnglish() {
+            loadGoogleTranslate('en');
         }
     </script>
 </head>
@@ -98,10 +113,7 @@
 <header>
     <h1>Ugo Labbé Portfolio</h1>
 </header>
-<div style="text-align: center;"></div>
-    <button id="translate-btn" onclick="loadGoogleTranslate()">Translate to French</button>
-    <div id="google_translate_element" style="margin-top: 20px;"></div>
-</div>
+
 <nav>
     <a href="projects.html">My Projects</a>
     <a href="machine_learning_applications.html">Machine Learning applications</a>
@@ -110,7 +122,11 @@
     <a href="neural_networks.html">Neural Networks</a>
     <!-- Add more links here as you create new pages -->
 </nav>
-
+<div class="translate-container"></div>
+    <button class="translate-btn" onclick="translateToFrench()">Translate to French</button>
+    <button class="translate-btn" onclick="translateToEnglish()">Back to English</button>
+    <div id="google_translate_element"></div>
+</div>
 <section id="about">
     <h2>About Me</h2>
     <p>
