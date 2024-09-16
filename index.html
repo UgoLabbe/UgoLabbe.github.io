@@ -59,13 +59,27 @@
             bottom: 0;
         }
     </style>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'fr'}, 'google_translate_element');
+        }
+
+        function loadGoogleTranslate() {
+            var translateScript = document.createElement('script');
+            translateScript.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+            document.head.appendChild(translateScript);
+        }
+    </script>
 </head>
 <body>
 
 <header>
     <h1>Ugo Labbé Portfolio</h1>
 </header>
-
+<div style="text-align: center;"></div>
+    <button id="translate-btn" onclick="loadGoogleTranslate()">Translate to French</button>
+    <div id="google_translate_element" style="margin-top: 20px;"></div>
+</div>
 <nav>
     <a href="projects.html">My Projects</a>
     <a href="machine_learning_applications.html">Machine Learning applications</a>
