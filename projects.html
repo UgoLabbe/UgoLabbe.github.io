@@ -24,15 +24,12 @@
             font-size: 2.5em;
         }
         section {
-            max-width: 800px;
+            max-width: 900px;
             margin: 20px auto;
             padding: 20px;
             background: #fff;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h2 {
-            color: #007BFF;
         }
         .button {
             display: inline-block;
@@ -47,6 +44,39 @@
         .button:hover {
             background: #0056b3;
         }
+        h2 {
+            color: #007BFF;
+            text-align: center;
+        }
+        .project {
+            background: #f9f9f9;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .project h3 {
+            margin: 0;
+            font-size: 1.2em;
+            color: #007BFF;
+        }
+        .project h3 a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .project ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+        .project ul li {
+            margin: 5px 0;
+        }
         footer {
             text-align: center;
             padding: 20px 0;
@@ -55,12 +85,6 @@
             position: fixed;
             width: 100%;
             bottom: 0;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto 20px;
         }
     </style>
 </head>
@@ -75,59 +99,39 @@
 
     <h2>My Projects</h2>
     <p>
-        During my academic studies, I had the opportunity to work on a variety of data science projects, both independently and as part of a team. These projects allowed me to apply the principles and techniques I learned in the classroom to both fictional and real-world scenarios. The projects ranged from data analysis and visualization to building predictive models using machine learning algorithms. Through these experiences, I developed skills in data manipulation, statistical analysis, and model deployment, which have become invaluable in my pursuit of a career in data science. You can find all the different reports below, if you are interested in the code used to create these different project, don't hesitate to contact me.
+        During my academic studies, I worked on various data science projects, both independently and as part of a team. These projects helped me apply my skills in real-world scenarios, ranging from data analysis and visualization to predictive modeling. Below are the details of my projects. Feel free to contact me for the code used in these works!
     </p>
-    
-    <h3><a target="_blank" href="Projects/Room occupancy project (Machine Learning).pdf">Predicting Room Occupancy (5 pages)</a></h3>
-    <ul>
-        <li><strong>Project Type:</strong> Team Project (3 students)</li>
-        <li><strong>Programming Language:</strong> Python</li>
-        <li><strong>Course:</strong> Machine Learning - M.Sc Machine Learning and Data Mining</li>
-    </ul>
-   
-    <h3><a target="_blank" href="Projects/Waveform project (Machine Learning).pdf">Classifiying Waveforms (3 pages)</a></h3>
-    <ul>
-        <li><strong>Project Type:</strong> Team Project (2 students)</li>
-        <li><strong>Programming Language:</strong> Python</li>
-        <li><strong>Course:</strong> Machine Learning - M.Sc Machine Learning and Data Mining</li>
-    </ul>
-    
-    <h3><a target="_blank" href="Projects/Matrix Maximum Segment project (Advanced algorithm).pdf">Matrix Maximum Segment Problem (25 pages)</a></h3>
-    <ul>
-        <li><strong>Project Type:</strong> Team Project (5 students)</li>
-        <li><strong>Programming Language:</strong> Python</li>
-        <li><strong>Course:</strong> Advanced Algorithms - M.Sc Machine Learning and Data Mining</li>
-    </ul>
 
-    <h3><a target="_blank" href="Projects/US Work visa project (Data Mining).pdf">Predicting Work Visa certification (6 pages)</a></h3>
-    <ul>
-        <li><strong>Project Type:</strong> Individual Project</li>
-        <li><strong>Programming Language:</strong> R</li>
-        <li><strong>Course:</strong> Data Mining - M.Sc Machine Learning and Data Mining</li>
-    </ul>
+    <div class="project">
+        <h3><a target="_blank" href="Projects/AI_ML_Climate_Change___A1.pdf">Quantization of Object Detection Model and Large Language Model (7 pages)</a></h3>
+        <ul>
+            <li><strong>Project Type:</strong> Team Project (3 students)</li>
+            <li><strong>Programming Language:</strong> Python</li>
+            <li><strong>Course:</strong> AI and ML in the Era of Climate Change - M.Sc Machine Learning and Data Mining</li>
+        </ul>
+    </div>
 
-    <h3><a target="_blank" href="Projects/Exoplanet project (Data Analysis).pdf">Exoplanets Analysis (8 pages)</a></h3>
-    <ul>
-        <li><strong>Project Type:</strong> Individual Project</li>
-        <li><strong>Programming Language:</strong> R</li>
-        <li><strong>Course:</strong> Data Analysis - M.Sc Machine Learning and Data Mining</li>
-    </ul>
+    <div class="project">
+        <h3><a target="_blank" href="Projects/Room occupancy project (Machine Learning).pdf">Predicting Room Occupancy (5 pages)</a></h3>
+        <ul>
+            <li><strong>Project Type:</strong> Team Project (3 students)</li>
+            <li><strong>Programming Language:</strong> Python</li>
+            <li><strong>Course:</strong> Machine Learning - M.Sc Machine Learning and Data Mining</li>
+        </ul>
+    </div>
 
-    <h3><a target="_blank" href="Projects/Marine Algae project (ST 412).pdf">Marine Algae Analysis (5 pages)</a></h3>
-    <ul>
-        <li><strong>Project Type:</strong> Team Project (3 students)</li>
-        <li><strong>Programming Language:</strong> R</li>
-        <li><strong>Course:</strong> ST412 (Oregon State University) - B.S Statistics</li>
-    </ul>
+    <div class="project">
+        <h3><a target="_blank" href="Projects/Waveform project (Machine Learning).pdf">Classifying Waveforms (3 pages)</a></h3>
+        <ul>
+            <li><strong>Project Type:</strong> Team Project (2 students)</li>
+            <li><strong>Programming Language:</strong> Python</li>
+            <li><strong>Course:</strong> Machine Learning - M.Sc Machine Learning and Data Mining</li>
+        </ul>
+    </div>
 
-    <h3><a target="_blank" href="Projects/Ligue1 Bundesliga pass difference project (ST351).pdf">Soccer Pass Difference Analysis (3 pages)</a></h3>
-    <ul>
-        <li><strong>Project Type:</strong> Individual Project</li>
-        <li><strong>Programming Language:</strong> R</li>
-        <li><strong>Course:</strong> ST351 (Oregon State University) - B.S Statistics</li>
-    </ul>
+    <!-- Repeat the same structure for other projects -->
 </section>
-<br>
+
 <footer>
     &copy; 2024 Ugo Labbé. All rights reserved.
 </footer>
