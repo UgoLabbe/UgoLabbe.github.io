@@ -32,8 +32,20 @@
 
         header h1 {
             margin: 0;
-            font-size: 2.8em;
+            font-size: 3.0em;
             letter-spacing: -1px;
+        }
+        /* Slightly increase base font size for better readability */
+        html { font-size: 16px; }
+        body { font-size: 1.05rem; }
+        /* Logo classes for consistent sizing and spacing */
+        .logo { height: 44px; vertical-align: middle; margin-right: 10px; }
+        .logo-sm { height: 33px; vertical-align: middle; margin-right: 5px; }
+        .logo-xxs { height: 28px; vertical-align: middle; margin-right: 5px; }
+
+        @media (max-width: 600px) {
+            .logo, .logo-sm, .logo-xxs { height: 28px; }
+            header h1 { font-size: 2.2em; }
         }
 
         header p {
@@ -148,7 +160,7 @@
     <h2>Current Research Focus</h2>
     <div class="highlight-box">
         <h3>PhD Candidate: Multi-Fidelity Gaussian Processes</h3>
-        <p><strong><img src="assets/michelin_logo.png" alt="Michelin" style="height:25px; vertical-align:middle; margin-right:5px;">Michelin | <img src="assets/Institut_polytechnique_de_Paris_logo.svg.png" alt="Institut Polytechnique" style="height:25px; vertical-align:middle; margin-right:5px;">Institut Polytechnique (CMAP) | INRIA Côte d'Azur</strong></p>
+        <p><strong><img src="assets/michelin_logo.png" alt="Michelin" class="logo-xxs">Michelin | <img src="assets/Institut_polytechnique_de_Paris_logo.svg.png" alt="Institut Polytechnique" class="logo-xxs">Institut Polytechnique (CMAP) | <img src="assets/inria.png" alt="INRIA" class="logo-xxs">INRIA Côte d'Azur</strong></p>
         <p>
             My current research focuses on <strong>Multi-Fidelity Gaussian Processes</strong> applied to <strong>time series prediction</strong> (as well as multi-output) for complex industrial processes at Michelin. 
             I work on improving prediction and uncertainty quantification by combining high-fidelity data with lower-fidelity simulation to predict process outcomes.
@@ -172,13 +184,13 @@
 <section id="experience">
     <h2>Professional Experience</h2>
 
-    <h3><img src="assets/michelin_logo.png" alt="Michelin" style="height:40px; vertical-align:middle; margin-right:10px;">Michelin, Clermont-Ferrand - PhD Researcher (CIFRE)</h3>
+    <h3><img src="assets/michelin_logo.png" alt="Michelin" class="logo">PhD Researcher (CIFRE) at Michelin</h3>
     <span class="meta-info">Current Position</span>
     <ul>
         <li>Development of multi-fidelity probabilistic surrogate models for industrial time series prediction.</li>
     </ul>
 
-    <h3><img src="assets/Airbus-Logo.png" alt="Airbus" style="height:40px; vertical-align:middle; margin-right:10px;">Airbus, Toulouse - Data Scientist Intern</h3>
+    <h3><img src="assets/Airbus-Logo.png" alt="Airbus" class="logo">Data Scientist Intern at Airbus</h3>
     <span class="meta-info">March 2024 - August 2024</span>
     <ul>
         <li>Used simulation software and ML models to predict material thermodynamics properties.</li>
@@ -186,14 +198,14 @@
         <li>Built a researcher-facing interface using Dash.</li>
     </ul>
 
-    <h3><img src="assets/bayer_logopng.png" alt="Bayer" style="height:40px; vertical-align:middle; margin-right:10px;">Bayer, Lyon - Data Scientist Intern</h3>
+    <h3><img src="assets/bayer_logopng.png" alt="Bayer" class="logo">Data Scientist Intern at Bayer</h3>
     <span class="meta-info">March 2024 - August 2024</span>
     <ul>
         <li>Engineered an AI-driven watchdog for data compliance using web-scraping and Python.</li>
         <li>Built a GraphQL-based content suggestion system using Machine Learning.</li>
     </ul>
 
-    <h3><img src="assets/martin belaysoud logo.png" alt="Martin Belaysoud" style="height:40px; vertical-align:middle; margin-right:10px;">Martin Belaysoud, Lyon - Data Analyst Apprentice</h3>
+    <h3><img src="assets/martin belaysoud logo.png" alt="Martin Belaysoud" class="logo">Data Analyst Apprentice at Martin Belaysouds</h3>
     <span class="meta-info">April 2021 - September 2022</span>
     <ul>
         <li>Automated GDPR compliance text analysis using R and SQL.</li>
@@ -205,15 +217,15 @@
     <h2>Education</h2>
     <p>
         <strong>M.Sc. Machine Learning & Data Mining</strong><br>
-        <img src="assets/TU-Vienna-Blue.png" alt="TU Wien" style="height:30px; vertical-align:middle; margin-right:5px;">TU Wien (Austria) & <img src="assets/Université_de_Saint-Étienne_(logo_2016).svg.png" alt="Université Jean Monnet" style="height:30px; vertical-align:middle; margin-right:5px;">Université Jean Monnet (France) | 2023-2025
+        <img src="assets/TU-Vienna-Blue.png" alt="TU Wien" class="logo-sm">TU Wien (Austria) & <img src="assets/Université_de_Saint-Étienne_(logo_2016).svg.png" alt="Université Jean Monnet" class="logo-sm">Université Jean Monnet (France) | 2023-2025
     </p>
     <p>
         <strong>B.S. Statistics</strong><br>
-        <img src="assets/OSU_vertical_2C_O_over_B_SCALD.png" alt="Oregon State University" style="height:30px; vertical-align:middle; margin-right:5px;">Oregon State University (USA) | 2022-2023
+        <img src="assets/OSU_vertical_2C_O_over_B_SCALD.png" alt="Oregon State University" class="logo-sm">Oregon State University (USA) | 2022-2023
     </p>
     <p>
         <strong>Associate Degree in Statistics & Business Intelligence</strong><br>
-        <img src="assets/Logo_Université_Lumière_Lyon_2.png" alt="Université Lyon 2" style="height:30px; vertical-align:middle; margin-right:5px;">Université Lyon 2 (France) | 2020-2022
+        <img src="assets/Logo_Université_Lumière_Lyon_2.png" alt="Université Lyon 2" class="logo-sm">Université Lyon 2 (France) | 2020-2022
     </p>
 </section>
 
