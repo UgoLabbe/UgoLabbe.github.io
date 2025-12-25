@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research | Ugo Labbé</title>
+    <style>
+        :root {
+            --primary-color: #003366;
+            --accent-color: #007BFF;
+            --bg-light: #f8fafc;
+        }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; margin: 0; background: var(--bg-light); }
+        header { background: var(--primary-color); color: white; padding: 40px 20px; text-align: center; }
+        nav { background: white; padding: 10px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        nav a { margin: 0 15px; text-decoration: none; color: var(--primary-color); font-weight: bold; }
+        section { max-width: 900px; margin: 30px auto; padding: 30px; background: white; border-radius: 8px; }
+        .concept-card { border-left: 4px solid var(--accent-color); padding: 15px; margin-bottom: 25px; background: #f0f7ff; }
+        h2 { color: var(--primary-color); }
+        h3 { margin-top: 0; color: var(--accent-color); }
+        .ref-list { font-size: 0.9em; color: #555; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>The Science of Multi-Fidelity Modeling</h1>
+    <p>How I use Gaussian Processes to optimize industrial processes at Michelin</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+</nav>
+
+<section>
+    <h2>The Problem: Expensive Reality</h2>
+    <p>
+        In industrial manufacturing, like tire production at Michelin, we often face a trade-off. We can run "High-Fidelity" simulations—which are extremely accurate but take days to compute—or "Low-Fidelity" approximations which are fast but lack precision. 
+        My research aims to combine these sources to get the best of both worlds: <strong>accuracy and speed.</strong>
+    </p>
+
+    <div class="concept-card">
+        <h3>1. The Foundation: Co-Kriging</h3>
+        <p>
+            Based on the pioneering work of <strong>Kennedy & O’Hagan (2000)</strong>, I use "Co-Kriging." This statistical framework assumes that different levels of data are correlated. 
+            It models the "gap" between a simple model and reality as a Gaussian Process, allowing the cheap data to guide the expensive model's predictions.
+        </p>
+    </div>
+
+    <div class="concept-card">
+        <h3>2. Scaling Up: Recursive Modeling</h3>
+        <p>
+            When dealing with many levels of data (e.g., experiments, physics simulations, and historical logs), standard models become too slow. 
+            I implement the <strong>recursive formulation</strong> proposed by <strong>Le Gratiet & Garnier (2014)</strong>. 
+            This breaks one massive, complex problem into a sequence of smaller, independent steps, drastically reducing the computational cost without losing predictive accuracy.
+        </p>
+    </div>
+
+    <div class="concept-card">
+        <h3>3. Real-World Complexity</h3>
+        <p>
+            As highlighted by <strong>Brevault et al. (2020)</strong>, relationships between data sources aren't always linear. 
+            My work focuses on handling these complex relationships—such as variable correlation and non-stationarity—ensuring that our models remain reliable even when the physics of the process changes over time.
+        </p>
+    </div>
+
+    <h2>Selected Bibliography</h2>
+    <ul class="ref-list">
+        <li><strong>Kennedy & O’Hagan (2000)</strong>: Predicting output from complex codes when fast approximations are available. <em>Biometrika</em>.</li>
+        <li><strong>Le Gratiet & Garnier (2014)</strong>: Recursive co-kriging for multi-fidelity experiments. <em>Int. J. Uncertainty Quantification</em>.</li>
+        <li><strong>Brevault, Balesdent & Hebbal (2020)</strong>: Overview of GP-based multi-fidelity techniques. <em>Aerospace Science and Technology</em>.</li>
+    </ul>
+</section>
+
+</body>
+</html>
