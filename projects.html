@@ -3,136 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Projects</title>
+    <title>Ugo Labbé | Projects</title>
     <style>
+        :root {
+            --primary-color: #003366; /* Academic Blue */
+            --secondary-color: #eef2f7;
+            --accent-color: #007BFF;
+            --text-main: #2c3e50;
+            --text-light: #546e7a;
+        }
+
         body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: #f8fafc;
+            color: var(--text-main);
         }
+
         header {
-            background: #007BFF;
+            background: linear-gradient(135deg, #001f3f 0%, #003366 100%);
             color: #fff;
-            padding: 20px 0;
+            padding: 60px 20px;
             text-align: center;
         }
+
         header h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 2.8em;
+            letter-spacing: -1px;
         }
-        section {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 10px auto 0;
+        }
+
+        nav {
             background: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
+
+        nav a {
+            color: var(--primary-color);
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95em;
+            text-transform: uppercase;
+        }
+
+        nav a.active, nav a:hover {
+            color: var(--accent-color);
+        }
+
+        section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 40px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .highlight-box {
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 25px;
+            margin: 20px 0;
+        }
+
         h2 {
-            color: #007BFF;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
         }
+
+        h3 {
+            color: var(--accent-color);
+            margin-bottom: 5px;
+        }
+
+        .meta-info {
+            font-size: 0.9em;
+            color: var(--text-light);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .project {
+            padding: 20px 0;
+            border-bottom: 1px dashed #e6eef6;
+        }
+
+        .project:last-child {
+            border-bottom: none;
+        }
+
         .button {
             display: inline-block;
             padding: 10px 20px;
             margin: 10px 0;
-            background: #007BFF;
+            background: var(--accent-color);
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
             transition: background 0.3s ease;
         }
+
         .button:hover {
             background: #0056b3;
         }
+
         footer {
             text-align: center;
-            padding: 20px 0;
-            background: #007BFF;
-            color: #fff;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            padding: 40px 0;
+            background: var(--primary-color);
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9em;
         }
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto 20px;
-        }
+
+        a.project-link { color: var(--accent-color); text-decoration: none; }
+        a.project-link:hover { text-decoration: underline; }
+
     </style>
 </head>
 <body>
 
 <header>
-    <h1>My Projects</h1>
+    <h1>Ugo Labbé</h1>
+    <p>PhD Researcher in Machine Learning & Probabilistic Modeling</p>
 </header>
+
+<nav>
+    <a href="index.html#about">Research</a>
+    <a href="projects.html" class="active">Projects</a>
+    <a href="index.html#experience">Experience</a>
+    <a href="index.html#education">Education</a>
+</nav>
 
 <section>
     <a href="index.html" class="button">Back to Menu</a>
 
-    <h2>My Projects</h2>
-    <p>
-        During my academic studies, I had the opportunity to work on a variety of data science projects, both independently and as part of a team. These projects allowed me to apply the principles and techniques I learned in the classroom to both fictional and real-world scenarios. The projects ranged from data analysis and visualization to building predictive models using machine learning algorithms. Through these experiences, I developed skills in data manipulation, statistical analysis, and model deployment, which have become invaluable in my pursuit of a career in data science. You can find all the different reports below, if you are interested in the code used to create these different project, don't hesitate to contact me.
-    </p>
+    <h2>Selected Projects</h2>
 
-    <h3><a target="_blank" href="Projects/SNA_LinkPred2___Report.pdf">Testing different link prediction techniques (12 pages)</a></h3>
-    <ul>
-        <li><strong>Project Type:</strong> Team Project (5 students)</li>
-        <li><strong>Course:</strong> Social Network Analysis - M.Sc Machine Learning and Data Mining</li>
-    </ul>
+    <div class="highlight-box">
+        <p>
+            During my academic studies, I worked on a variety of data science projects—individual and team-based—covering data analysis, visualization and predictive modelling. Below are selected reports; contact me for code or questions.
+        </p>
+    </div>
 
-    <h3><a target="_blank" href="Projects/AI_ML_Climate_Change___A1.pdf">Quantization of Object Detection model and Large Language Model (7 pages)</a></h3>
-    <ul>
-        <li><strong>Project Type:</strong> Team Project (3 students)</li>
-        <li><strong>Course:</strong> AI and ML in the Era of Climate change - M.Sc Machine Learning and Data Mining</li>
-    </ul>
+    <div class="project">
+        <h3><a class="project-link" target="_blank" href="Projects/SNA_LinkPred2___Report.pdf">Testing different link prediction techniques (12 pages)</a></h3>
+        <span class="meta-info"><strong>Project Type:</strong> Team Project (5 students) • <strong>Course:</strong> Social Network Analysis - M.Sc Machine Learning and Data Mining</span>
+    </div>
 
-    <h3><a target="_blank" href="Projects/Room occupancy project (Machine Learning).pdf">Predicting Room Occupancy (5 pages)</a></h3>
-    <ul>
-        <li><strong>Project Type:</strong> Team Project (3 students)</li>
-        <li><strong>Course:</strong> Machine Learning - M.Sc Machine Learning and Data Mining</li>
-    </ul>
-   
-    <h3><a target="_blank" href="Projects/Waveform project (Machine Learning).pdf">Classifiying Waveforms (3 pages)</a></h3>
-    <ul>
-        <li><strong>Project Type:</strong> Team Project (2 students)</li>
-        <li><strong>Course:</strong> Machine Learning - M.Sc Machine Learning and Data Mining</li>
-    </ul>
-    
-    <h3><a target="_blank" href="Projects/Matrix Maximum Segment project (Advanced algorithm).pdf">Matrix Maximum Segment Problem (25 pages)</a></h3>
-    <ul>
-        <li><strong>Project Type:</strong> Team Project (5 students)</li>
-        <li><strong>Course:</strong> Advanced Algorithms - M.Sc Machine Learning and Data Mining</li>
-    </ul>
+    <div class="project">
+        <h3><a class="project-link" target="_blank" href="Projects/AI_ML_Climate_Change___A1.pdf">Quantization of Object Detection model and Large Language Model (7 pages)</a></h3>
+        <span class="meta-info"><strong>Project Type:</strong> Team Project (3 students) • <strong>Course:</strong> AI and ML in the Era of Climate change - M.Sc Machine Learning and Data Mining</span>
+    </div>
 
-    <h3><a target="_blank" href="Projects/US Work visa project (Data Mining).pdf">Predicting Work Visa certification (6 pages)</a></h3>
-    <ul>
-        <li><strong>Project Type:</strong> Individual Project</li>
-        <li><strong>Course:</strong> Data Mining - M.Sc Machine Learning and Data Mining</li>
-    </ul>
+    <div class="project">
+        <h3><a class="project-link" target="_blank" href="Projects/Room occupancy project (Machine Learning).pdf">Predicting Room Occupancy (5 pages)</a></h3>
+        <span class="meta-info"><strong>Project Type:</strong> Team Project (3 students) • <strong>Course:</strong> Machine Learning - M.Sc Machine Learning and Data Mining</span>
+    </div>
 
-    <h3><a target="_blank" href="Projects/Exoplanet project (Data Analysis).pdf">Exoplanets Analysis (8 pages)</a></h3>
-    <ul>
-        <li><strong>Project Type:</strong> Individual Project</li>
-        <li><strong>Course:</strong> Data Analysis - M.Sc Machine Learning and Data Mining</li>
-    </ul>
+    <div class="project">
+        <h3><a class="project-link" target="_blank" href="Projects/Waveform project (Machine Learning).pdf">Classifying Waveforms (3 pages)</a></h3>
+        <span class="meta-info"><strong>Project Type:</strong> Team Project (2 students) • <strong>Course:</strong> Machine Learning - M.Sc Machine Learning and Data Mining</span>
+    </div>
 
-    <h3><a target="_blank" href="Projects/Marine Algae project (ST 412).pdf">Marine Algae Analysis (5 pages)</a></h3>
-    <ul>
-        <li><strong>Project Type:</strong> Team Project (3 students)</li>
-        <li><strong>Course:</strong> ST412 (Oregon State University) - B.S Statistics</li>
-    </ul>
+    <div class="project">
+        <h3><a class="project-link" target="_blank" href="Projects/Matrix Maximum Segment project (Advanced algorithm).pdf">Matrix Maximum Segment Problem (25 pages)</a></h3>
+        <span class="meta-info"><strong>Project Type:</strong> Team Project (5 students) • <strong>Course:</strong> Advanced Algorithms - M.Sc Machine Learning and Data Mining</span>
+    </div>
 
-    <h3><a target="_blank" href="Projects/Ligue1 Bundesliga pass difference project (ST351).pdf">Soccer Pass Difference Analysis (3 pages)</a></h3>
-    <ul>
-        <li><strong>Project Type:</strong> Individual Project</li>
-        <li><strong>Course:</strong> ST351 (Oregon State University) - B.S Statistics</li>
-    </ul>
+    <div class="project">
+        <h3><a class="project-link" target="_blank" href="Projects/US Work visa project (Data Mining).pdf">Predicting Work Visa certification (6 pages)</a></h3>
+        <span class="meta-info"><strong>Project Type:</strong> Individual Project • <strong>Course:</strong> Data Mining - M.Sc Machine Learning and Data Mining</span>
+    </div>
+
+    <div class="project">
+        <h3><a class="project-link" target="_blank" href="Projects/Exoplanet project (Data Analysis).pdf">Exoplanets Analysis (8 pages)</a></h3>
+        <span class="meta-info"><strong>Project Type:</strong> Individual Project • <strong>Course:</strong> Data Analysis - M.Sc Machine Learning and Data Mining</span>
+    </div>
+
+    <div class="project">
+        <h3><a class="project-link" target="_blank" href="Projects/Marine Algae project (ST 412).pdf">Marine Algae Analysis (5 pages)</a></h3>
+        <span class="meta-info"><strong>Project Type:</strong> Team Project (3 students) • <strong>Course:</strong> ST412 (Oregon State University) - B.S Statistics</span>
+    </div>
+
+    <div class="project">
+        <h3><a class="project-link" target="_blank" href="Projects/Ligue1 Bundesliga pass difference project (ST351).pdf">Soccer Pass Difference Analysis (3 pages)</a></h3>
+        <span class="meta-info"><strong>Project Type:</strong> Individual Project • <strong>Course:</strong> ST351 (Oregon State University) - B.S Statistics</span>
+    </div>
+
 </section>
-<br>
+
 <footer>
     &copy; 2024 Ugo Labbé. All rights reserved.
 </footer>
