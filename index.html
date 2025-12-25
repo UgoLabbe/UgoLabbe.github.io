@@ -3,176 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ugo Labbé Portfolio</title>
+    <title>Ugo Labbé | PhD Researcher</title>
     <style>
+        :root {
+            --primary-color: #003366; /* Academic Blue */
+            --secondary-color: #eef2f7;
+            --accent-color: #007BFF;
+            --text-main: #2c3e50;
+            --text-light: #546e7a;
+        }
+
         body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: #f8fafc;
+            color: var(--text-main);
         }
+
         header {
-            background: #007BFF;
+            background: var(--primary-color);
+            background: linear-gradient(135deg, #001f3f 0%, #003366 100%);
             color: #fff;
-            padding: 20px 0;
+            padding: 60px 20px;
             text-align: center;
         }
+
         header h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 2.8em;
+            letter-spacing: -1px;
         }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 15px auto 0;
+        }
+
         nav {
-            background: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        nav a {
-            color: #fff;
-            margin: 0 15px;
-            text-decoration: none;
-            font-size: 1.1em;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        section {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
             background: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
+
+        nav a {
+            color: var(--primary-color);
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95em;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 40px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .highlight-box {
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 25px;
+            margin: 20px 0;
+        }
+
         h2 {
-            color: #007BFF;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
         }
+
+        h3 {
+            color: var(--accent-color);
+            margin-bottom: 5px;
+        }
+
+        .meta-info {
+            font-size: 0.9em;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        .contact-links a {
+            color: var(--accent-color);
+            text-decoration: none;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+
         footer {
             text-align: center;
-            padding: 20px 0;
-            background: #007BFF;
-            color: #fff;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            padding: 40px 0;
+            background: var(--primary-color);
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9em;
+        }
+
+        .tag {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin: 5px 2px;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Ugo Labbé Portfolio</h1>
+    <h1>Ugo Labbé</h1>
+    <p>PhD Researcher in Machine Learning & Probabilistic Modeling</p>
 </header>
 
 <nav>
-    <a href="projects.html">My Projects</a>
-    <a href="machine_learning_applications.html">Machine Learning applications</a>
-    <a href="classification.html">Classification</a>
-    <a href="regression.html">Regression</a>
-    <a href="neural_networks.html">Neural Networks</a>
-    
+    <a href="#about">Research</a>
+    <a href="projects.html">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
 </nav>
 
 <section id="about">
+    <h2>Current Research Focus</h2>
+    <div class="highlight-box">
+        <h3>PhD Candidate: Multi-Fidelity Gaussian Processes</h3>
+        <p><strong>Michelin | Institut Polytechnique | INRIA Côte d'Azur</strong></p>
+        <p>
+            My current research focuses on <strong>Multi-Fidelity Probabilistic Surrogate Models</strong> (specifically Gaussian Processes) applied to <strong>time series prediction</strong> for complex industrial processes at Michelin. 
+            I work on optimizing computational efficiency by combining high-fidelity simulation data with lower-fidelity experimental or historical data to predict material properties and process outcomes.
+        </p>
+        <span class="tag">Gaussian Processes</span>
+        <span class="tag">Multi-Fidelity Modeling</span>
+        <span class="tag">Time Series</span>
+        <span class="tag">Bayesian Optimization</span>
+    </div>
+
     <h2>About Me</h2>
     <p>
-        Hello! My name is Ugo Labbé, and I am a passionate machine learning enthusiast. I have a background in Statistics, Business Intelligence and Data Science. 
-        I enjoy working on projects that involve data analysis (mostly knowledge discovery), machine learning, and artificial intelligence. On this website, you will find various demos and projects related to machine learning and data science. 
-        Feel free to explore and reach out if you have any questions or collaborations in mind! To have some example of machine learning applications in a business context, <a href="machine_learning_applications.html">click here</a>. 
-        To see some of my academic projects, <a href="projects.html">click here</a>. 
+        I am a Machine Learning researcher with a strong background in Statistics and Data Science. I specialize in bridging the gap between theoretical machine learning and industrial applications, particularly in the realms of metallurgy (alloy design) and process optimization.
     </p>
-    <h2>Current Position</h2>
-    <ul>
-        <li>PhD CIFRE at Michelin on Multi-fidelity probabilistic surrogate models, directed by the Institut Polytechnique and INRIA Côte d'Azur</li>
-    </ul>
-    <h2>Languages</h2>
-    <ul>
-        <li>French - native</li>
-        <li>English - Bilingual</li>
-        <li>Spanish - A2</li>
-        <li>German - A1</li>
-    </ul>
-    <h2>Contact</h2>
-    <p>
-        ugolabbe12_at_gmail.com
-    </p>
-    <p>
-        <a target="_blank" href="https://www.linkedin.com/in/ugo-labb%C3%A9-03aa341b8/">My LinkedIn</a>
-    </p>
-</section>
     
+    <div class="contact-links">
+        <a href="mailto:ugolabbe12@gmail.com">ugolabbe12@gmail.com</a>
+        <a target="_blank" href="https://www.linkedin.com/in/ugo-labb%C3%A9-03aa341b8/">LinkedIn Profile</a>
+    </div>
+</section>
+
+<section id="experience">
+    <h2>Professional Experience</h2>
+
+    <h3>Michelin - PhD Researcher (CIFRE)</h3>
+    <span class="meta-info">Current Position</span>
+    <ul>
+        <li>Development of multi-fidelity probabilistic surrogate models for industrial time series prediction.</li>
+    </ul>
+
+    <h3>Airbus, Toulouse - Data Scientist Intern</h3>
+    <span class="meta-info">March 2024 - August 2024</span>
+    <ul>
+        <li>Used simulation software and ML models to predict material thermodynamics properties.</li>
+        <li>Developed a multi-objective optimization algorithm for alloy design.</li>
+        <li>Built a researcher-facing interface using Dash.</li>
+    </ul>
+
+    <h3>Bayer, Lyon - Data Scientist Intern</h3>
+    <span class="meta-info">March 2024 - August 2024</span>
+    <ul>
+        <li>Engineered an AI-driven watchdog for data compliance using web-scraping and Python.</li>
+        <li>Built a GraphQL-based content suggestion system using Machine Learning.</li>
+    </ul>
+
+    <h3>Martin Belaysoud, Lyon - Data Analyst Apprentice</h3>
+    <span class="meta-info">April 2021 - September 2022</span>
+    <ul>
+        <li>Automated GDPR compliance text analysis using R and SQL.</li>
+        <li>Delivered statistical insights on commercial data to sales teams.</li>
+    </ul>
+</section>
+
 <section id="education">
     <h2>Education</h2>
     <p>
-        <strong>Master Degree in Machine Learning and Data Mining 2</strong><br>
-        <a target="_blank" href="https://www.tuwien.at/">TU Wien</a> (Austria): 2024-2025
+        <strong>M.Sc. Machine Learning & Data Mining</strong><br>
+        TU Wien (Austria) & Université Jean Monnet (France) | 2023-2025
     </p>
     <p>
-        <strong>Master Degree in Machine Learning and Data Mining 1</strong><br>
-        <a target="_blank" href="https://www.univ-st-etienne.fr/fr/index.html">Université Jean Monnet</a> (France): 2023-2024
+        <strong>B.S. Statistics</strong><br>
+        Oregon State University (USA) | 2022-2023
     </p>
     <p>
-        <strong>Bachelor Degree in Statistics</strong><br>
-        <a target="_blank" href="https://oregonstate.edu/">Oregon State University</a> (USA): 2022-2023
+        <strong>Associate Degree in Statistics & Business Intelligence</strong><br>
+        Université Lyon 2 (France) | 2020-2022
     </p>
-    <p>
-        <strong>Associate Degree in Statistics and Business Intelligence</strong><br>
-        <a target="_blank" href="https://iut.univ-lyon2.fr/">Université Lyon 2</a> (France): 2020-2022
-    </p>
-</section>
-    
-<section id="experience">
-    <h2>Professional Experience</h2>
-    <h3>Airbus, Toulouse (France) - Data Scientist Intern</h3>
-    <p><strong>March 2024 - August 2024</strong></p>
-    <ul>
-        <li>Calculation of thermodynamics properties using simulation software, training and testing of Machine Learning models to predict materials properties</li>
-        <li>Creation of a multi-objective optimisation algorithm for alloy design</li>
-        <li>Creation of a user interface using Dash</li>
-    </ul>
-
-    <h3>Bayer, Lyon (France) - Data Scientist Intern</h3>
-    <p><strong>March 2024 - August 2024</strong></p>
-    <ul>
-        <li>Creation of an automated watchdog for data compliance, using Python with Artificial Intelligence, Web-scraping techniques, and API interaction, reducing research time for stakeholders</li>
-        <li>Creation of an automated system of content suggestions using GraphQL for database querying and Machine Learning techniques with Python, improving projects creation time</li>
-    </ul>
-
-    <h3>Martin Belaysoud, Lyon (France) - Data Analyst Apprentice</h3>
-    <p><strong>April 2021 - September 2022</strong></p>
-    <ul>
-        <li>Creation of an automatic text analysis script for GDPR compliance using SQL for database querying, R, HTML, and CSS for processing and warning users</li>
-        <li>Statistical analysis of commercial data using Python, to improve data understanding for the sales team</li>
-        <li>Extraction of key information from safety pdf files, using Python, saving times the data entry team</li>
-    </ul>
-</section>
-<section>
-    <h2>Programming language and Softwares</h2>
-    <p>During both my education and Professional life I had hands on experience on different programming languages and softwares related closely (or not) to Data Science, of which:</p>
-    <ul>
-        <li>Statistical Analysis and Data Science Tools: Python, R, SAS, SPAD</li>
-        <li>Database Query Languages and Database management: SQL, GraphQL, PostgreSQL</li>
-        <li>Data Visualization and Business Intelligence Tools: PowerBI, Tableau, Excel</li>
-        <li>Collaboration platform and algorithm automatization: GitHub and GitHub Actions</li>
-        <li>Web Development: HTML, CSS</li>
-    </ul>
 </section>
 
 <section>
-    <h2>Machine Learning Demos</h2>
-    <p>Check out some of the machine learning demos I've created:</p>
-    <ul>
-        <li><a href="classification.html">Classification algorithms</a></li>
-        <li><a href="regression.html">Regression algorithms</a></li>
-        <li><a href="neural_networks.html">Neural Networks</a></li>
-        <!-- Add more links here as you create new pages -->
-    </ul>
+    <h2>Technical Expertise</h2>
+    <div>
+        <strong>Probabilistic Modeling:</strong> Python (GPy, Scikit-Learn), Gaussian Processes, Bayesian Methods<br>
+        <strong>Data Engineering:</strong> SQL, GraphQL, PostgreSQL, GitHub Actions<br>
+        <strong>Visualization:</strong> Dash, PowerBI, Tableau, R Shiny<br>
+        <strong>Languages:</strong> French (Native), English (Bilingual), Spanish (A2), German (A1)
+    </div>
 </section>
-<br>
+
 <footer>
-    &copy; 2024 Ugo Labbé. All rights reserved.
+    &copy; 2024 Ugo Labbé. Focused on advancing industrial AI through Probabilistic Modeling.
 </footer>
 
 </body>
