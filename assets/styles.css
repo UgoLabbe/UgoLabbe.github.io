@@ -10,7 +10,7 @@
 /* Typography & sizing */
 html { font-size: 16px; }
 body {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.7;
     margin: 0;
@@ -29,7 +29,7 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 3.0em;
+    font-size: 2.8em;
     letter-spacing: -1px;
 }
 
@@ -66,19 +66,19 @@ header p {
 .header-top { display:flex !important; align-items:center !important; justify-content:center !important; gap:20px !important; flex-wrap:wrap !important; }
 .header-top .profile-link { display:inline-block !important; }
 .header-top .profile-pic, .profile-pic {
-    width:72px !important;
-    height:72px !important;
+    width:80px !important;
+    height:80px !important;
     display:block !important;
     border-radius:50% !important;
     object-fit:cover !important;
     border: 2px solid rgba(255,255,255,0.18) !important;
     box-shadow: 0 2px 6px rgba(0,0,0,0.12) !important;
     background-color: #fff !important;
-    max-width:72px !important;
+    max-width:80px !important;
 }
 .contact-text { display:none !important; }
 .header-title h1 { margin:0; }
-.header-position { margin:6px 0 0; font-size:1rem; color: rgba(255,255,255,0.95); }
+.header-position { margin:6px 0 0; font-size:0.98rem; color: rgba(255,255,255,0.95); }
 .header-contact { display:flex; align-items:center; gap:10px; }
 .contact-button {
     display:inline-flex;
@@ -97,7 +97,6 @@ header p {
 .contact-button.email:hover, .contact-button.email:focus { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.18); }
 .contact-button.linkedin { background:#0077B5; }
 .contact-button.linkedin:hover, .contact-button.linkedin:focus { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.18); }
-.contact-text { display:inline-block; }
 
 .header-cta { color: rgba(255,255,255,0.95); font-size: 0.95rem; margin-top:8px; }
 
@@ -105,7 +104,7 @@ header p {
 .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; }
 
 @media (max-width:600px) {
-    .profile-pic { width:56px; height:56px; }
+    .profile-pic { width:64px; height:64px; }
     .contact-text { display:none; }
 }
 
@@ -125,7 +124,7 @@ nav a {
     margin: 0 20px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.98rem;
     text-transform: uppercase;
 }
 
