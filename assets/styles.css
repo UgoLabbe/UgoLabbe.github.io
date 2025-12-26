@@ -45,7 +45,7 @@ header p {
     display:flex;
     align-items:center;
     justify-content:center;
-    gap:18px;
+    gap:20px;
     flex-wrap:wrap;
 }
 .profile-link {
@@ -58,24 +58,25 @@ header p {
 }
 .profile-link:hover,
 .profile-link:focus-visible {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.16);
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
     outline: none;
 }
-/* Stronger rules to prevent other styles (e.g., GitHub Pages defaults) from breaking header layout */
-.header-top { display:flex !important; align-items:center !important; justify-content:center !important; gap:18px !important; flex-wrap:wrap !important; }
+/* Stronger rules to enforce layout on GitHub Pages */
+.header-top { display:flex !important; align-items:center !important; justify-content:center !important; gap:20px !important; flex-wrap:wrap !important; }
 .header-top .profile-link { display:inline-block !important; }
 .header-top .profile-pic, .profile-pic {
-    width:56px !important;
-    height:56px !important;
+    width:72px !important;
+    height:72px !important;
     display:block !important;
     border-radius:50% !important;
     object-fit:cover !important;
     border: 2px solid rgba(255,255,255,0.18) !important;
     box-shadow: 0 2px 6px rgba(0,0,0,0.12) !important;
     background-color: #fff !important;
-    max-width:56px !important;
+    max-width:72px !important;
 }
+.contact-text { display:none !important; }
 .header-title h1 { margin:0; }
 .header-position { margin:6px 0 0; font-size:1rem; color: rgba(255,255,255,0.95); }
 .header-contact { display:flex; align-items:center; gap:10px; }
@@ -104,7 +105,7 @@ header p {
 .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; }
 
 @media (max-width:600px) {
-    .profile-pic { width:44px; height:44px; }
+    .profile-pic { width:56px; height:56px; }
     .contact-text { display:none; }
 }
 
