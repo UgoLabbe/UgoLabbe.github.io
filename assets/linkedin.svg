@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" role="img" aria-labelledby="linkedinTitle">
+  <title id="linkedinTitle">LinkedIn</title>
+  <rect width="24" height="24" rx="4" fill="#0077B5"/>
+  <path d="M6.94 9.5h2.1v7.2h-2.1zM8 7.9a1.2 1.2 0 110-2.4 1.2 1.2 0 010 2.4zM11.5 9.5h2v1h.03c.28-.5.96-1.03 1.98-1.03 2.12 0 2.5 1.4 2.5 3.22v4.03h-2.1v-3.58c0-.86-.02-1.97-1.2-1.97-1.2 0-1.38.94-1.38 1.9v3.65h-2.04z" fill="#fff"/>
+</svg>
