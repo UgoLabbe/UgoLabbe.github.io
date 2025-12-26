@@ -40,11 +40,53 @@ header p {
     margin: 15px auto 0;
 }
 
-/* Header social icons */
-.header-contact { display:flex; align-items:center; gap:8px; }
-.header-contact img { height:36px; }
-.header-contact a { display:inline-block; }
-.header-cta { color: rgba(255,255,255,0.9); font-size: 0.95rem; }
+/* Header layout + contact buttons */
+.header-top {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:18px;
+    flex-wrap:wrap;
+}
+.profile-pic {
+    width:56px;
+    height:56px;
+    border-radius:50%;
+    object-fit:cover;
+    border: 2px solid rgba(255,255,255,0.25);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+.header-title h1 { margin:0; }
+.header-position { margin:6px 0 0; font-size:1rem; color: rgba(255,255,255,0.95); }
+.header-contact { display:flex; align-items:center; gap:10px; }
+.contact-button {
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 10px;
+    border-radius:8px;
+    text-decoration:none;
+    color:#fff;
+    font-weight:600;
+    transition: transform 120ms ease, box-shadow 120ms ease;
+    box-shadow: 0 2px 0 rgba(0,0,0,0.08);
+}
+.contact-button .contact-icon { width:20px; height:20px; }
+.contact-button.email { background:#003366; }
+.contact-button.email:hover, .contact-button.email:focus { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.18); }
+.contact-button.linkedin { background:#0077B5; }
+.contact-button.linkedin:hover, .contact-button.linkedin:focus { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.18); }
+.contact-text { display:inline-block; }
+
+.header-cta { color: rgba(255,255,255,0.95); font-size: 0.95rem; margin-top:8px; }
+
+/* Accessibility helper */
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; }
+
+@media (max-width:600px) {
+    .profile-pic { width:44px; height:44px; }
+    .contact-text { display:none; }
+}
 
 /* Navigation */
 nav {
