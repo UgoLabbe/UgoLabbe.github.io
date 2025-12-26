@@ -48,13 +48,29 @@ header p {
     gap:18px;
     flex-wrap:wrap;
 }
+.profile-link {
+    display:inline-block;
+    border-radius:50%;
+    overflow:hidden;
+    padding:2px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+    transition: transform 160ms ease, box-shadow 160ms ease;
+}
+.profile-link:hover,
+.profile-link:focus-visible {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.16);
+    outline: none;
+}
 .profile-pic {
     width:56px;
     height:56px;
+    display:block;
     border-radius:50%;
     object-fit:cover;
-    border: 2px solid rgba(255,255,255,0.25);
+    border: 2px solid rgba(255,255,255,0.18);
     box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    background-color: #fff;
 }
 .header-title h1 { margin:0; }
 .header-position { margin:6px 0 0; font-size:1rem; color: rgba(255,255,255,0.95); }
