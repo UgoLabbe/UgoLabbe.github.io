@@ -62,15 +62,19 @@ header p {
     box-shadow: 0 8px 20px rgba(0,0,0,0.16);
     outline: none;
 }
-.profile-pic {
-    width:56px;
-    height:56px;
-    display:block;
-    border-radius:50%;
-    object-fit:cover;
-    border: 2px solid rgba(255,255,255,0.18);
-    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
-    background-color: #fff;
+/* Stronger rules to prevent other styles (e.g., GitHub Pages defaults) from breaking header layout */
+.header-top { display:flex !important; align-items:center !important; justify-content:center !important; gap:18px !important; flex-wrap:wrap !important; }
+.header-top .profile-link { display:inline-block !important; }
+.header-top .profile-pic, .profile-pic {
+    width:56px !important;
+    height:56px !important;
+    display:block !important;
+    border-radius:50% !important;
+    object-fit:cover !important;
+    border: 2px solid rgba(255,255,255,0.18) !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12) !important;
+    background-color: #fff !important;
+    max-width:56px !important;
 }
 .header-title h1 { margin:0; }
 .header-position { margin:6px 0 0; font-size:1rem; color: rgba(255,255,255,0.95); }
