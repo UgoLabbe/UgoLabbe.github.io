@@ -10,7 +10,7 @@
 /* Typography & sizing */
 html { font-size: 16px; }
 body {
-    font-size: 1.05rem;
+    font-size: 1rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.7;
     margin: 0;
@@ -23,7 +23,7 @@ body {
 header {
     background: linear-gradient(135deg, #001f3f 0%, var(--primary-color) 100%);
     color: #fff;
-    padding: 60px 20px;
+    padding: 30px 20px;
     text-align: center;
 }
 
