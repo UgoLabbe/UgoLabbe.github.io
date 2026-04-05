@@ -192,6 +192,22 @@ footer {
 a.project-link { color: var(--accent-color); text-decoration: none; }
 a.project-link:hover { text-decoration: underline; }
 
+/* Poster link styling */
+a.poster-link {
+    color: var(--accent-color);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid var(--accent-color);
+    transition: all 200ms ease;
+}
+
+a.poster-link:hover {
+    color: #fff;
+    background-color: var(--accent-color);
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
 /* Research page specific */
 .concept-card { border-left: 4px solid var(--accent-color); padding: 15px; margin-bottom: 14px; background: #f0f7ff; }
 .ref-list { font-size: 1em; color: #555; }
@@ -229,17 +245,19 @@ a.project-link:hover { text-decoration: underline; }
 /* Year marker section */
 .timeline-year {
     position: relative;
-    margin-bottom: 30px;
+    margin-bottom: 120px;
+    margin-top: 100px;
     padding-left: 80px;
 }
 
 .year-marker {
     position: absolute;
     left: -20px;
+    top: -70px;
     font-size: 1.8em;
     font-weight: bold;
     color: var(--primary-color);
-    background: var(--secondary-color);
+    background: var(--bg-light);
     padding: 8px 16px;
     border-radius: 25px;
     border: 3px solid var(--accent-color);
