@@ -222,35 +222,119 @@ a.project-link:hover { text-decoration: underline; }
     left: 30px;
     top: 0;
     bottom: 0;
-    width: 2px;
-    background: var(--accent-color);
+    width: 3px;
+    background: linear-gradient(180deg, var(--accent-color) 0%, var(--primary-color) 100%);
 }
 
+/* Year marker section */
+.timeline-year {
+    position: relative;
+    margin-bottom: 30px;
+    padding-left: 80px;
+}
+
+.year-marker {
+    position: absolute;
+    left: -20px;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--primary-color);
+    background: var(--secondary-color);
+    padding: 8px 16px;
+    border-radius: 25px;
+    border: 3px solid var(--accent-color);
+    z-index: 10;
+}
+
+/* Individual timeline items */
 .timeline-item {
     position: relative;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
     padding-left: 80px;
+}
+
+.timeline-item:hover .timeline-marker {
+    transform: scale(1.3);
+    box-shadow: 0 0 0 3px var(--primary-color), 0 0 12px rgba(0, 123, 255, 0.6);
+}
+
+.timeline-item:hover .timeline-content {
+    transform: translateX(8px);
+    box-shadow: -4px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .timeline-marker {
     position: absolute;
     left: 20px;
-    top: 10px;
+    top: 15px;
     width: 20px;
     height: 20px;
     background: var(--accent-color);
     border-radius: 50%;
     border: 3px solid #fff;
     box-shadow: 0 0 0 3px var(--primary-color);
+    transition: all 300ms ease, transform 200ms ease;
+    cursor: pointer;
+}
+
+.timeline-content {
+    background: #f8fafc;
+    padding: 18px;
+    border-radius: 6px;
+    border-left: 4px solid var(--accent-color);
+    transition: all 250ms ease;
+}
+
+.timeline-content:hover {
+    background: #f0f7ff;
+}
+
+.event-date {
+    display: inline-block;
+    font-size: 0.85em;
+    font-weight: 700;
+    color: #fff;
+    background: var(--accent-color);
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 8px;
 }
 
 .timeline-content h3 {
-    margin: 0 0 10px 0;
+    margin: 8px 0 6px 0;
     color: var(--primary-color);
-    font-size: 1.4em;
+    font-size: 1.25em;
+    transition: color 200ms ease;
+}
+
+.timeline-item:hover .timeline-content h3 {
+    color: var(--accent-color);
 }
 
 .timeline-content p {
-    margin: 5px 0;
+    margin: 6px 0;
     line-height: 1.6;
+    color: var(--text-main);
+}
+
+@media (max-width: 600px) {
+    .timeline::before {
+        left: 15px;
+    }
+    
+    .timeline-marker {
+        left: 6px;
+        width: 16px;
+        height: 16px;
+    }
+    
+    .timeline-item {
+        padding-left: 50px;
+    }
+    
+    .year-marker {
+        left: -50px;
+        font-size: 1.4em;
+        padding: 6px 12px;
+    }
 }
