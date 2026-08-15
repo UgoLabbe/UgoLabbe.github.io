@@ -12,6 +12,7 @@ const gifts = [
   { emoji: "🫂", title: "Beaucoup de calins", text: "Pour se sentir toujours plus proches, toujours aimés, et faire disparaître les doutes et les problèmes." },
   { emoji: "😚", title: "Enormement de bisous", text: "Pour renforcer notre lien et exprimer notre amour." },
   { emoji: "💭", title: "Pleins de rêves", text: "Pour imaginer notre futur ensemble, espérer pour l'avenir et le construire ensemble." },
+  { emoji: "🫶", title: "Toujours se supporter", text: "Pour que, dans les bons et les mauvais moments, nous soyons toujours là l'un pour l'autre." },
 ];
 
 /* ============================================================================
@@ -40,13 +41,18 @@ const movies = [
    💫 PERSONNALISATION — Chapitre V, les activités / dates
    ============================================================================ */
 const activities = [
+  { emoji: "🗣️", label: "Apprendre ta langue maternelle et connaître ta culture" },
   { emoji: "👩‍🍳", label: "Cuisiner ensemble" },
   { emoji: "🎤", label: "Soirée karaoké" },
+  { emoji: "🥞", label: "Te préparer un petit déjeuner au lit" },
   { emoji: "🖼️", label: "Faire une sortie musée" },
+  { emoji: "☕", label: "Se prendre un café ensemble" },
+  { emoji: "🖼️", label: "Dessiner des oeuvres d'art pour notre chez-nous" },
   { emoji: "🪂", label: "Sauter à l'élastique (contre mon gré)" },
   { emoji: "🌅", label: "Regarder un beau coucher de soleil" },
   { emoji: "📖", label: "Lire un beau livre de poésie ensemble, et se reconnaître dans les textes" },
-  { emoji: "✨", label: "À inventer ensemble" },
+  { emoji: "🏡", label: "S'imaginer notre future maison" },
+  { emoji: "✨", label: "Et beaucoup d'autres à inventer ensemble" },
 ];
 
 if (PASSWORD === "changemoi") {
