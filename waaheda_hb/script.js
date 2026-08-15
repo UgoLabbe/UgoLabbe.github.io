@@ -52,6 +52,7 @@ const activities = [
   { emoji: "🌅", label: "Regarder un beau coucher de soleil" },
   { emoji: "📖", label: "Lire un beau livre de poésie ensemble, et se reconnaître dans les textes" },
   { emoji: "🏡", label: "S'imaginer notre future maison" },
+  { emoji: "📸", label: "Se prendre en photo ensemble, partout, tout le temps" },
   { emoji: "✨", label: "Et beaucoup d'autres à inventer ensemble" },
 ];
 
