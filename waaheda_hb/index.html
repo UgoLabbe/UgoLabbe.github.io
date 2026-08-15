@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pour toi 🧵</title>
+<meta name="description" content="Une lettre à dérouler, fil rouge après fil rouge.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Newsreader:ital,wght@0,400;0,500;1,400&family=Homemade+Apple&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="locked">
+
+<!-- ============================================================
+     LE FIL ROUGE DE PROGRESSION (barre fixe, se remplit au scroll)
+     ============================================================ -->
+<div class="thread-progress" aria-hidden="true">
+  <div class="thread-progress-track">
+    <div class="thread-progress-fill" id="threadFill"></div>
+  </div>
+</div>
+
+<!-- ============================================================
+     PORTAIL : enveloppe + mot de passe
+     ============================================================ -->
+<div class="gate" id="gate">
+
+  <div class="gate-stage" id="gateStage">
+    <button class="envelope" id="envelope" aria-label="Ouvrir l'enveloppe">
+      <span class="envelope-back"></span>
+      <span class="envelope-flap"></span>
+      <span class="wax-seal">❤</span>
+      <span class="envelope-front"></span>
+      <span class="envelope-label">Pour toi</span>
+    </button>
+    <p class="gate-hint" id="gateHint">touche l'enveloppe pour l'ouvrir</p>
+  </div>
+
+  <div class="password-stage" id="passwordStage" hidden>
+    <p class="password-prompt">Pour entrer, tape la date de notre premier message&nbsp;… (format : JJ / MM / AAAA)</p>
+    <div class="password-row">
+      <input type="password" id="passwordInput" class="password-input" placeholder="mot de passe" autocomplete="off" autocapitalize="off" spellcheck="false">
+      <button type="button" id="togglePassword" class="password-toggle" aria-label="Afficher le mot de passe">👁</button>
+    </div>
+    <button type="button" id="passwordSubmit" class="password-submit">Ouvrir la lettre</button>
+    <p class="password-error" id="passwordError">Presque… ce n'est pas encore le bon mot 💭</p>
+    <p class="password-hint" id="passwordHint"></p>
+  </div>
+
+</div>
+
+<!-- ============================================================
+     LA LETTRE
+     ============================================================ -->
+<main class="letter" id="letter">
+
+  <!-- ---------- Chapitre I : Introduction ---------- -->
+  <section class="chapter chapter-intro" id="intro">
+    <p class="kicker">Chapitre I</p>
+    <h1 class="chapter-title">Notre fil rouge</h1>
+    <div class="letter-text">
+      <p>J'ai appris, grâce à toi, qu'en Asie, il existe un mythe ancestral&nbsp;: un fil rouge invisible relierait, dès la naissance, les personnes destinées à se rencontrer. Il peut s'étirer, s'emmêler, presque disparaître, mais jamais se briser.</p>
+      <p>Je crois qu'on tient chacun un bout de ce fil depuis le premier jour. Alors pour ton anniversaire, j'aimerai te montrer et répéter ce que ce fil rouge signifie pour la suite, pour nous, et toutes les belles choses qui nous attendent.</p>
+      <p class="signature-line">Prends ton temps. Suis le fil.</p>
+    </div>
+  </section>
+
+  <div class="stitch-divider" aria-hidden="true"><svg viewBox="0 0 600 40" preserveAspectRatio="none"><path d="M0 20 Q 12.5 2 25 20 T 50 20 T 75 20 T 100 20 T 125 20 T 150 20 T 175 20 T 200 20 T 225 20 T 250 20 T 275 20 T 300 20 T 325 20 T 350 20 T 375 20 T 400 20 T 425 20 T 450 20 T 475 20 T 500 20 T 525 20 T 550 20 T 575 20 T 600 20"/></svg></div>
+
+  <!-- ---------- Chapitre II : L'essentiel ---------- -->
+  <section class="chapter" id="gifts">
+    <p class="kicker">Chapitre II</p>
+    <h2 class="chapter-title">L'essentiel</h2>
+    <p class="chapter-intro-text">Touche chaque case pour l'ouvrir.</p>
+    <div class="gifts-grid" id="giftsGrid">
+    </div>
+  </section>
+
+  <div class="stitch-divider" aria-hidden="true"><svg viewBox="0 0 600 40" preserveAspectRatio="none"><path d="M0 20 Q 12.5 2 25 20 T 50 20 T 75 20 T 100 20 T 125 20 T 150 20 T 175 20 T 200 20 T 225 20 T 250 20 T 275 20 T 300 20 T 325 20 T 350 20 T 375 20 T 400 20 T 425 20 T 450 20 T 475 20 T 500 20 T 525 20 T 550 20 T 575 20 T 600 20"/></svg></div>
+
+  <!-- ---------- Chapitre III : Films ---------- -->
+  <section class="chapter" id="movies">
+    <p class="kicker">Chapitre III</p>
+    <h2 class="chapter-title">Nos prochaines séances ciné (liste non-exhaustive!), à regarder ensemble, sous une couette, enlacé ensemble</h2>
+    <button class="accordion-toggle" id="moviesToggle" aria-expanded="false">
+      <span>Voir la liste</span>
+      <span class="accordion-icon">🎬</span>
+    </button>
+    <div class="accordion-panel" id="moviesPanel">
+      <div class="accordion-panel-inner">
+        <div class="movies-grid" id="moviesGrid">
+          <!-- généré par script.js à partir du tableau "movies" -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stitch-divider" aria-hidden="true"><svg viewBox="0 0 600 40" preserveAspectRatio="none"><path d="M0 20 Q 12.5 2 25 20 T 50 20 T 75 20 T 100 20 T 125 20 T 150 20 T 175 20 T 200 20 T 225 20 T 250 20 T 275 20 T 300 20 T 325 20 T 350 20 T 375 20 T 400 20 T 425 20 T 450 20 T 475 20 T 500 20 T 525 20 T 550 20 T 575 20 T 600 20"/></svg></div>
+
+  <!-- ---------- Chapitre IV : Nourriture ---------- -->
+  <section class="chapter" id="food">
+    <p class="kicker">Chapitre IV</p>
+    <h2 class="chapter-title">À table</h2>
+    <div class="food-columns">
+      <div class="food-column food-yes">
+        <p class="food-heading">On dit toujours oui!</p>
+        <ul class="food-list">
+          <li><span class="food-emoji">🍣</span>Sushi</li>
+          <li><span class="food-emoji">🍕</span>Pizza</li>
+          <li><span class="food-emoji">🍛</span>Butter chicken</li>
+          <li><span class="food-emoji">🍝</span>Lasagnes</li>
+          <li><span class="food-emoji">💞</span>Les plats cuisinés avec le coeur</li>
+        </ul>
+      </div>
+      <div class="food-column food-no">
+        <p class="food-heading">On évitera soigneusement</p>
+        <ul class="food-list">
+          <li><span class="food-emoji">🍈</span>Melon</li>
+          <li><span class="food-emoji">🍅</span>Tomate</li>
+          <li><span class="food-emoji">🌶️</span>Trop épicé</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="stitch-divider" aria-hidden="true"><svg viewBox="0 0 600 40" preserveAspectRatio="none"><path d="M0 20 Q 12.5 2 25 20 T 50 20 T 75 20 T 100 20 T 125 20 T 150 20 T 175 20 T 200 20 T 225 20 T 250 20 T 275 20 T 300 20 T 325 20 T 350 20 T 375 20 T 400 20 T 425 20 T 450 20 T 475 20 T 500 20 T 525 20 T 550 20 T 575 20 T 600 20"/></svg></div>
+
+  <!-- ---------- Chapitre V : Activités ---------- -->
+  <section class="chapter" id="activities">
+    <p class="kicker">Chapitre V</p>
+    <h2 class="chapter-title">Nos prochaines dates/aventures</h2>
+    <p class="chapter-intro-text">Clique sur celles qui te font envie ✨</p>
+    <div class="activities-grid" id="activitiesGrid">
+      <!-- généré par script.js à partir du tableau "activities" -->
+    </div>
+  </section>
+
+  <div class="stitch-divider" aria-hidden="true"><svg viewBox="0 0 600 40" preserveAspectRatio="none"><path d="M0 20 Q 12.5 2 25 20 T 50 20 T 75 20 T 100 20 T 125 20 T 150 20 T 175 20 T 200 20 T 225 20 T 250 20 T 275 20 T 300 20 T 325 20 T 350 20 T 375 20 T 400 20 T 425 20 T 450 20 T 475 20 T 500 20 T 525 20 T 550 20 T 575 20 T 600 20"/></svg></div>
+
+  <!-- ---------- Chapitre VI : Conclusion ---------- -->
+  <section class="chapter chapter-closing" id="closing">
+    <p class="kicker">Chapitre VI</p>
+    <h2 class="chapter-title">Pour la suite de notre histoire</h2>
+    <div class="letter-text">
+      <p>Bien que nous nous connaissions depuis seulement un peu plus d'un mois, chaque jour avec toi est précieux, et plus j'apprends à te connaître, plus je me sens chanceux. Je sais que tu es la bonne personne et je nous souhaite une merveilleuse histoire.</p>
+      <p>Ce n'est que le début d'un long fleuve paisible, rempli d'amour, d'aventures et de moments inoubliables.</p>
+      <p>Je t'attends avec grande impatience pour te montrer tout ce que je ressens pour toi, tout l'amour que je te porte et veux te partager.</p>
+      <p>Je ne sais pas ce que j'ai fais pour te mériter, mais je sais que je veux passer le reste de ma vie à te rendre heureuse.</p>
+      <p>J'ai tellement de chose à te dire, à te partager, et tellement envie de te connaître aussi bien que possible, et de te prendre dans mes bras dans 8 jours.</p>
+      <p>Merci d'exister. Merci de tenir l'autre bout du fil depuis tout ce temps.</p>
+      <p class="birthday-line">Joyeux anniversaire!</p>
+      <p class="hand-signature">Je t'adore, avant de te dire autre chose en face, <span id="signatureName">ma princesse, Waaheda</span></p>
+    </div>
+
+    <div class="bow" aria-hidden="true">
+      <svg viewBox="0 0 200 100" width="140">
+        <path d="M100 50 C 60 10, 10 10, 15 50 C 10 90, 60 90, 100 50 C 140 10, 190 10, 185 50 C 190 90, 140 90, 100 50 Z" fill="none" stroke="#B3122B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="100" cy="50" r="6" fill="#B3122B"/>
+      </svg>
+    </div>
+    <p class="the-end">à suivre, pour toujours.</p>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
