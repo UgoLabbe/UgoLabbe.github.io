@@ -41,10 +41,11 @@ const movies = [
    💫 PERSONNALISATION — Chapitre V, les activités / dates
    ============================================================================ */
 const activities = [
-  { emoji: "🗣️", label: "Apprendre ta langue maternelle et connaître ta culture" },
+  { emoji: "🗣️", label: "Apprendre ta langue maternelle et t'écouter parler ta culture" },
   { emoji: "👩‍🍳", label: "Cuisiner ensemble" },
   { emoji: "🎤", label: "Soirée karaoké" },
   { emoji: "🥞", label: "Te préparer un petit déjeuner au lit" },
+  { emoji: "🛍️", label: "Faire du shopping et valider toutes tes tenues" },
   { emoji: "🖼️", label: "Faire une sortie musée" },
   { emoji: "☕", label: "Se prendre un café ensemble" },
   { emoji: "🖼️", label: "Dessiner des oeuvres d'art pour notre chez-nous" },
