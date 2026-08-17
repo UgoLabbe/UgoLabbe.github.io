@@ -3,15 +3,15 @@ const PASSWORD = "11/07/2026";      // <-- remplace par votre mot secret (pas se
 const PASSWORD_HINT = "";          // optionnel : indice affiché après 3 essais ratés, ex. "notre chanson"
 
 const gifts = [
-  { emoji: "🫂", title: "Beaucoup de calins", text: "Pour se sentir toujours plus proches, toujours aimés, et faire disparaître les doutes et les problèmes." },
-  { emoji: "😚", title: "Enormement de bisous", text: "Pour renforcer notre lien et exprimer notre amour." },
+  { emoji: "🫂", title: "Beaucoup de câlins", text: "Pour se sentir toujours plus proches, toujours aimés, et faire disparaître les doutes et les problèmes." },
+  { emoji: "😚", title: "Enormément de bisous", text: "Pour renforcer notre lien et exprimer notre amour." },
   { emoji: "💭", title: "Pleins de rêves", text: "Pour imaginer notre futur ensemble, espérer pour l'avenir et le construire ensemble." },
-  { emoji: "🫶", title: "Toujours se supporter", text: "Pour que, dans les bons et les mauvais moments, nous soyons toujours là l'un pour l'autre." },
+  { emoji: "🫶", title: "Toujours nous soutenir", text: "Pour que, dans les bons et les mauvais moments, nous soyons toujours là l'un pour l'autre." },
 ];
 
 const movies = [
   { title: "Om Shanti Om", image: "images/movies/om-shanti-om.jpg" },
-  { title: "Good will hunting", image: "images/movies/good-will.jpg" },
+  { title: "Good Will Hunting", image: "images/movies/good-will.jpg" },
   { title: "Pride and Prejudice", image: "images/movies/pride-and-prej.jpg" },
   { title: "Wall-E", image: "images/movies/wall-e.jpg"},
   { title: "Raiponce", image: "images/movies/raiponce.jpg"},
@@ -19,24 +19,24 @@ const movies = [
   { title: "The Notebook", image: "images/movies/the-notebook.jpg"},
   { title: "Barbie", image: "images/movies/barbie.jpg"},
   { title: "Notting Hill", image: "images/movies/notting-hill.jpg"},
-  { title: "Les Harry Potter!", image: "images/movies/harry-potter.jpg"},
+  { title: "Les films Harry Potter !", image: "images/movies/harry-potter.jpg"},
   { title: "Project Hail Mary", image: "images/movies/hail-mary.jpg"},
-  { title: "Les Miyazaki!", image: "images/movies/miyazaki.jpg"},
+  { title: "Les films Miyazaki !", image: "images/movies/miyazaki.jpg"},
   { title: "The Grand Budapest Hotel", image: "images/movies/the-grand-budapest-hotel.jpg"},
 ];
 
 const activities = [
-  { emoji: "🗣️", label: "Apprendre ta langue maternelle et t'écouter parler ta culture" },
+  { emoji: "🗣️", label: "Apprendre ta langue maternelle et t'écouter parler de ta culture" },
   { emoji: "👩‍🍳", label: "Cuisiner ensemble" },
   { emoji: "🎤", label: "Soirée karaoké" },
   { emoji: "🥞", label: "Te préparer un petit déjeuner au lit" },
   { emoji: "🛍️", label: "Faire du shopping et valider toutes tes tenues" },
   { emoji: "🖼️", label: "Faire une sortie musée" },
-  { emoji: "☕", label: "Se prendre un café ensemble" },
+  { emoji: "☕", label: "Prendre un café ensemble" },
   { emoji: "🖼️", label: "Dessiner des oeuvres d'art pour notre chez-nous" },
   { emoji: "🪂", label: "Sauter à l'élastique (contre mon gré)" },
   { emoji: "🌅", label: "Regarder un beau coucher de soleil" },
-  { emoji: "📖", label: "Lire un beau livre de poésie ensemble, et se reconnaître dans les textes" },
+  { emoji: "📖", label: "Lire un beau livre de poésie ensemble et se reconnaître dans les textes" },
   { emoji: "🏡", label: "S'imaginer notre future maison" },
   { emoji: "📸", label: "Se prendre en photo ensemble, partout, tout le temps" },
   { emoji: "✨", label: "Et beaucoup d'autres à inventer ensemble" },
