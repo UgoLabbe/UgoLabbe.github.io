@@ -1,13 +1,7 @@
-/* ============================================================================
-   🔐 PERSONNALISATION — mot de passe de la lettre
-   ============================================================================ */
+
 const PASSWORD = "11/07/2026";      // <-- remplace par votre mot secret (pas sensible à la casse/espaces)
 const PASSWORD_HINT = "";          // optionnel : indice affiché après 3 essais ratés, ex. "notre chanson"
 
-/* ============================================================================
-   🎁 PERSONNALISATION — Chapitre II, les cadeaux
-   Ajoute / supprime des lignes selon le nombre de cadeaux que tu as.
-   ============================================================================ */
 const gifts = [
   { emoji: "🫂", title: "Beaucoup de calins", text: "Pour se sentir toujours plus proches, toujours aimés, et faire disparaître les doutes et les problèmes." },
   { emoji: "😚", title: "Enormement de bisous", text: "Pour renforcer notre lien et exprimer notre amour." },
@@ -15,19 +9,13 @@ const gifts = [
   { emoji: "🫶", title: "Toujours se supporter", text: "Pour que, dans les bons et les mauvais moments, nous soyons toujours là l'un pour l'autre." },
 ];
 
-/* ============================================================================
-   🎬 PERSONNALISATION — Chapitre III, les films
-   Dépose tes affiches (.jpg/.png) dans le dossier images/movies/
-   puis indique ici leur nom de fichier exact. Si une image manque,
-   une carte de secours s'affiche automatiquement avec le titre.
-   ============================================================================ */
 const movies = [
   { title: "Om Shanti Om", image: "images/movies/om-shanti-om.jpg" },
   { title: "Good will hunting", image: "images/movies/good-will.jpg" },
   { title: "Pride and Prejudice", image: "images/movies/pride-and-prej.jpg" },
   { title: "Wall-E", image: "images/movies/wall-e.jpg"},
   { title: "Raiponce", image: "images/movies/raiponce.jpg"},
-  { title: "The office", image: "images/movies/the-office.jpg"},
+  { title: "The Office (pour Pam et Jim)", image: "images/movies/the-office.jpg"},
   { title: "The Notebook", image: "images/movies/the-notebook.jpg"},
   { title: "Barbie", image: "images/movies/barbie.jpg"},
   { title: "Notting Hill", image: "images/movies/notting-hill.jpg"},
@@ -37,9 +25,6 @@ const movies = [
   { title: "The Grand Budapest Hotel", image: "images/movies/the-grand-budapest-hotel.jpg"},
 ];
 
-/* ============================================================================
-   💫 PERSONNALISATION — Chapitre V, les activités / dates
-   ============================================================================ */
 const activities = [
   { emoji: "🗣️", label: "Apprendre ta langue maternelle et t'écouter parler ta culture" },
   { emoji: "👩‍🍳", label: "Cuisiner ensemble" },
