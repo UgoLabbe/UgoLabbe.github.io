@@ -3,7 +3,7 @@ const PASSWORD = "11/07/2026";      // <-- remplace par votre mot secret (pas se
 const PASSWORD_HINT = "";          // optionnel : indice affiché après 3 essais ratés, ex. "notre chanson"
 
 const gifts = [
-  { emoji: "🫂", title: "Beaucoup de câlins", text: "Pour se sentir toujours plus proches, toujours aimés, et faire disparaître les doutes et les problèmes." },
+  { emoji: "🫂", title: "Beaucoup de câlins", text: "Pour se sentir toujours aimés, et faire disparaître nos problèmes." },
   { emoji: "😚", title: "Enormément de bisous", text: "Pour renforcer notre lien et exprimer notre amour." },
   { emoji: "💭", title: "Pleins de rêves", text: "Pour imaginer notre futur ensemble, espérer pour l'avenir et le construire ensemble." },
   { emoji: "🫶", title: "Toujours nous soutenir", text: "Pour que, dans les bons et les mauvais moments, nous soyons toujours là l'un pour l'autre." },
